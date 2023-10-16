@@ -1,7 +1,9 @@
 import { Typography, Card, TextField, Button } from "@mui/material";
 import { useState } from "react";
 
-export function Signup() {
+export function Signup(props: {
+  onClick: (username: string, password: string) => void;
+}) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -15,12 +17,11 @@ export function Signup() {
           justifyContent: "center",
         }}
       >
-       
         <Typography variant="h5">
           Welcome to Coursehub! Sign up below
         </Typography>
       </div>
-    
+
       <div style={{ display: "flex", justifyContent: "center" }}>
         <Card variant={"outlined"} style={{ width: 400, padding: 20 }}>
           <TextField
@@ -43,12 +44,17 @@ export function Signup() {
             style={{ marginBottom: 10 }}
           />
           <div style={{ display: "flex", justifyContent: "center" }}>
-            <Button variant="contained" onClick={async () => {}}>
+            <Button
+              variant="contained"
+              onClick={async () => {
+                props.onClick(username, password);
+              }}
+            >
               Sign Up
             </Button>
           </div>
         </Card>
-      </div> 
+      </div>
     </div>
   );
 }

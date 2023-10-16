@@ -21,6 +21,7 @@ const courseSchema = new mongoose.Schema({
 });
 
 // Step -2 (Create Model/collections)
-export const Users = mongoose.model("Users", userSchema);
-export const Admins = mongoose.model("Admins", adminSchema);
-export const Courses = mongoose.model("Courses", courseSchema);
+export const User = mongoose.model("Users", userSchema);
+export const Admin = mongoose.model("Admins", adminSchema);
+export const Course = mongoose.model("Courses", courseSchema);
+export * from './isDbConnected'
