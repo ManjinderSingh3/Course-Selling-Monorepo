@@ -8,23 +8,22 @@ type Data = {
   message?: string;
 };
 
-export default async function signUpHandler(
+export default async function signInHandler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  console.log("Signup route got hit");
-  await isDbConnected();
+  console.log("SignIn route got hit");
+  //await isDbConnected();
   const { username, password } = req.body;
-  const admin = await Admin.findOne({ username });
+  const admin = await Admin.findOne({ username, password });
   if (admin) {
-    return res.status(403).json({ message: "Admin already exist" });
-  } else {
-    const obj = { username: username, password: password };
-    const newAdmin = new Admin(obj);
-    newAdmin.save();
     const token = jwt.sign({ username, role: "admin" }, CLIENT_JWT_SECRET, {
       expiresIn: "1h",
     });
-    return res.json({ message: "Admin created successfully", token });
+    return res
+      .status(200)
+      .json({ message: "Logged in successfully !!", token });
+  } else {
+    return res.status(401).json({ message: "User Authentication failed" });
   }
 }

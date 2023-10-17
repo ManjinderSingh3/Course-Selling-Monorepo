@@ -1,16 +1,16 @@
-import { Signup } from "ui";
+import { Signin } from "ui";
 import axios from "axios";
 
-export default function SignupPage() {
+export default function SigninPage() {
   return (
     <div>
-      <Signup
+      <Signin
         onClick={async (username, password) => {
-          const response = await axios.post("/api/signup", {
+          const response = await axios.post("/api/signin", {
             username,
             password,
           });
-          console.log("---",response);
+          console.log(response);
         }}
       />
     </div>
