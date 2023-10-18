@@ -13,7 +13,7 @@ export default async function signInHandler(
   res: NextApiResponse<Data>
 ) {
   console.log("SignIn route got hit");
-  //await isDbConnected();
+  await isDbConnected();
   const { username, password } = req.body;
   const admin = await Admin.findOne({ username, password });
   if (admin) {

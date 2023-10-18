@@ -88,8 +88,7 @@ export default function Appbar() {
           <div style={{ marginRight: 10, borderRadius: "20" }}>
             <Button
               onClick={() => {
-                router.push("/");
-                //router.push("/signin");
+                router.push("/signin");
               }}
               style={{ color: "#0d9488" }}
             >
@@ -100,8 +99,7 @@ export default function Appbar() {
             <Button
               variant="contained"
               onClick={() => {
-                router.push("/");
-                //router.push("/signup");
+                router.push("/signup");
               }}
               style={{
                 borderRadius: 9999,

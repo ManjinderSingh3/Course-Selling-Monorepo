@@ -14,6 +14,7 @@ export default async function handler(
 ) {
   await isDbConnected();
   const authHeader = req.headers.authorization;
+  console.log(authHeader)
   if (authHeader) {
     const token = authHeader.split(" ")[1];
     jwt.verify(token, CLIENT_JWT_SECRET, (err, decryptedValue) => {
@@ -28,11 +29,12 @@ export default async function handler(
         if (typeof decryptedValue === "string") {
           return res.status(403);
         }
+        console.log("Headers: ",req.headers);
         req.headers["userId"] = decryptedValue.id;
       }
     });
     const userId = req.headers["userId"];
-    console.log(userId);
+    console.log("User Id --->>",userId);
     const admin = await Admin.findOne({ _id: userId });
     if (!admin) {
       return res.status(403).json({ message: "Admin does not exist" });

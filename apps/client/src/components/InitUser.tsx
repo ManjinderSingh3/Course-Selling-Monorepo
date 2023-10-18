@@ -12,6 +12,7 @@ export function InitUser() {
           Authorization: "Bearer " + localStorage.getItem("token"),
         },
       });
+      console.log("--->", response);
       if (response.data.username) {
         setUser({
           isLoading: false,
@@ -24,6 +25,7 @@ export function InitUser() {
         });
       }
     } catch (e) {
+      console.log("First hit: ");
       setUser({
         isLoading: false,
         userEmail: null,
