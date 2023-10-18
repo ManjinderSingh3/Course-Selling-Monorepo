@@ -17,7 +17,7 @@ export default async function signInHandler(
   const { username, password } = req.body;
   const admin = await Admin.findOne({ username, password });
   if (admin) {
-    const token = jwt.sign({ username, role: "admin" }, CLIENT_JWT_SECRET, {
+    const token = jwt.sign({ id: admin._id }, CLIENT_JWT_SECRET, {
       expiresIn: "1h",
     });
     return res

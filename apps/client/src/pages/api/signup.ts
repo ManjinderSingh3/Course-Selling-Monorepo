@@ -22,7 +22,7 @@ export default async function signUpHandler(
     const obj = { username: username, password: password };
     const newAdmin = new Admin(obj);
     newAdmin.save();
-    const token = jwt.sign({ username, role: "admin" }, CLIENT_JWT_SECRET, {
+    const token = jwt.sign({ id: newAdmin._id }, CLIENT_JWT_SECRET, {
       expiresIn: "1h",
     });
     return res.json({ message: "Admin created successfully", token });
