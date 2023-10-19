@@ -1,17 +1,20 @@
 import { Typography, Button } from "@mui/material";
+import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { userState, userEmailState, userLoadingState } from "store";
 
 export default function Appbar() {
   const router = useRouter();
+  const session = useSession();
+  console.log(session);
   const setUser = useSetRecoilState(userState); // Setting up Atom
   const userEmail = useRecoilValue(userEmailState); // Subscribing to Selector
   const userLoading = useRecoilValue(userLoadingState); // Subscribing to Selector
 
-//   if (userLoading) {
-//     return <></>;
-//   }
+  //   if (userLoading) {
+  //     return <></>;
+  //   }
 
   if (userEmail) {
     return (
