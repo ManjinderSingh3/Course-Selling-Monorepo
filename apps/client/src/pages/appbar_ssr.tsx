@@ -117,10 +117,17 @@ export async function getServerSideProps(context) {
         permanent: false,
       },
     };
+  } else {
+    if (session.user) {
+      return {
+        props: {
+          session: {
+            user: {
+              email: session.user.email,
+            },
+          },
+        },
+      };
+    }
   }
-  return {
-    props: {
-      session,
-    },
-  };
 }
