@@ -12,7 +12,7 @@ export default function Home() {
   //const setUser = useSetRecoilState(userState);
   if (session.data) {
     return (
-      <div>
+      <div className="max-w-md">
         <div
           style={{
             display: "flex",
