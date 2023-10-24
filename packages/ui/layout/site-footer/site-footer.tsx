@@ -1,4 +1,6 @@
+import {SocialHandles} from 
 export const SiteFooter = () => {
+  const TWITTER_URL = process.env.TWITTER_URL
   return (
     <section
       id="footer-bottom"
