@@ -13,16 +13,15 @@ export default function Home() {
   //const setUser = useSetRecoilState(userState);
   if (session.data) {
     return (
-      <div className="max-w-md">
-        <div
+      <div >
+        <div className=" relative container "
           style={{
             display: "flex",
             justifyContent: "space-between",
-            padding: 5,
           }}
         >
           <div
-            style={{ marginLeft: 10, cursor: "pointer" }}
+            style={{ cursor: "pointer" }}
             onClick={() => {
               router.push("/");
             }}
@@ -60,7 +59,7 @@ export default function Home() {
           </div>
         </div>
         <div>
-          <HomeRoot/>
+          <HomeRoot />
           <SiteFooter />
         </div>
       </div>
