@@ -9,17 +9,18 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "ui": "*",
+    "db": "*",
+    "@course-selling-monorepo/tailwind-config": "*",
     "@types/jsonwebtoken": "^9.0.3",
     "@types/mongoose": "^5.11.97",
     "axios": "^1.5.1",
-    "db": "*",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^7.6.2",
     "next": "13.5.4",
     "next-auth": "^4.24.3",
     "react": "^18",
-    "react-dom": "^18",
-    "ui": "*"
+    "react-dom": "^18"
   },
   "devDependencies": {
     "@types/node": "^20",

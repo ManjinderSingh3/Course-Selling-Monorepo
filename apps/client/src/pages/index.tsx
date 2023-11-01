@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import HomeRoot from "@/components/HomeRoot";
 import { useSetRecoilState } from "recoil";
 import { userState } from "store";
-import { SiteFooter } from "@course-selling-monorepo/ui";
+import { Footer } from "@course-selling-monorepo/ui";
 
 //  ---------  Currently this handler has logic of Appbar  ----------
 export default function Home() {
@@ -14,6 +14,7 @@ export default function Home() {
   if (session.data) {
     return (
       <div>
+        <div className="text-rose-500 font-bold">TEST !!</div>
         <div
           className=" relative container "
           style={{
@@ -61,7 +62,7 @@ export default function Home() {
         </div>
         <div>
           <HomeRoot />
-          <SiteFooter />
+          <Footer />
         </div>
       </div>
     );
@@ -118,7 +119,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <SiteFooter />
+        <Footer />
       </div>
     );
   }

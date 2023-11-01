@@ -223,7 +223,7 @@
     "@babel/helper-validator-identifier" "^7.22.20"
     to-fast-properties "^2.0.0"
 
-"@course-selling-monorepo/tailwind-config@file:/Users/manjinder/Desktop/Learning_Material/OpenSource_Course/Projects/TypeScript/BACKUP/MONOREPO/Course-Selling-Monorepo/packages/tailwind-config":
+"@course-selling-monorepo/tailwind-config@*", "@course-selling-monorepo/tailwind-config@file:/Users/manjinder/Desktop/Learning_Material/OpenSource_Course/Projects/TypeScript/BACKUP/MONOREPO/Course-Selling-Monorepo/packages/tailwind-config":
   version "0.0.0"
   resolved "file:packages/tailwind-config"
 
@@ -585,7 +585,7 @@
   resolved "https://registry.npmjs.org/@next/env/-/env-13.5.4.tgz"
   integrity sha512-LGegJkMvRNw90WWphGJ3RMHMVplYcOfRWf2Be3td3sUa+1AaxmsYyANsA+znrGCBjXJNi4XAQlSoEfUxs/4kIQ==
 
-"@next/eslint-plugin-next@>=12.3.0 <14":
+"@next/eslint-plugin-next@^13.4.19", "@next/eslint-plugin-next@>=12.3.0 <14":
   version "13.5.4"
   resolved "https://registry.npmjs.org/@next/eslint-plugin-next/-/eslint-plugin-next-13.5.4.tgz"
   integrity sha512-vI94U+D7RNgX6XypSyjeFrOzxGlZyxOplU0dVE5norIfZGn/LDjJYPHdvdsR5vN1eRtl6PDAsOHmycFEOljK5A==
@@ -764,7 +764,7 @@
   dependencies:
     mongoose "*"
 
-"@types/node@*":
+"@types/node@*", "@types/node@^17.0.12":
   version "17.0.45"
   resolved "https://registry.npmjs.org/@types/node/-/node-17.0.45.tgz"
   integrity sha512-w+tIMs3rq2afQdsPJlODhoUEKzFP1ayaoyl1CcnwtIlsVe7K7bA1NGm4s3PraqTLlXnbIN84zuBlxBWo1u9BLw==
@@ -798,7 +798,7 @@
   resolved "https://registry.npmjs.org/@types/prop-types/-/prop-types-15.7.8.tgz"
   integrity sha512-kMpQpfZKSCBqltAJwskgePRaYRFukDkm1oItcAbC3gNELR20XIBcN9VRgg4+m8DKsTfkWeA4m4Imp4DDuWy7FQ==
 
-"@types/react-dom@^18", "@types/react-dom@^18.2.0":
+"@types/react-dom@^18", "@types/react-dom@^18.0.7", "@types/react-dom@^18.2.0":
   version "18.2.13"
   resolved "https://registry.npmjs.org/@types/react-dom/-/react-dom-18.2.13.tgz"
   integrity sha512-eJIUv7rPP+EC45uNYp/ThhSpE16k22VJUknt5OLoH9tbXoi8bMhwLf5xRuWMywamNbWzhrSmU7IBJfPup1+3fw==
@@ -812,7 +812,7 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^17.0.0 || ^18.0.0", "@types/react@^18", "@types/react@^18.2.0":
+"@types/react@*", "@types/react@^17.0.0 || ^18.0.0", "@types/react@^18", "@types/react@^18.0.22", "@types/react@^18.2.0":
   version "18.2.28"
   resolved "https://registry.npmjs.org/@types/react/-/react-18.2.28.tgz"
   integrity sha512-ad4aa/RaaJS3hyGz0BGegdnSRXQBkd1CCYDCdNjBPg90UUpLgo+WlJqb9fMYUxtehmzF3PJaTWqRZjko6BRzBg==
@@ -1548,6 +1548,7 @@ client-only@0.0.1:
   version "0.1.0"
   resolved "file:apps/client"
   dependencies:
+    "@course-selling-monorepo/tailwind-config" "*"
     "@types/jsonwebtoken" "^9.0.3"
     "@types/mongoose" "^5.11.97"
     axios "^1.5.1"
@@ -3226,7 +3227,7 @@ iterator.prototype@^1.1.2:
     reflect.getprototypeof "^1.0.4"
     set-function-name "^2.0.1"
 
-jiti@^1.18.2:
+jiti@^1.19.1:
   version "1.20.0"
   resolved "https://registry.npmjs.org/jiti/-/jiti-1.20.0.tgz"
   integrity sha512-3TV69ZbrvV6U5DfQimop50jE9Dl6J8O1ja1dvBbMba/sZ3YBEQqJ2VZRoQPVnhlzjNtU1vaXRZVrVjU4qtm8yA==
@@ -3707,7 +3708,7 @@ next-auth@^4.24.3:
     preact-render-to-string "^5.1.19"
     uuid "^8.3.2"
 
-"next@^12.2.5 || ^13", next@13.5.4:
+"next@^12.2.5 || ^13", next@^13.4.19, next@13.5.4:
   version "13.5.4"
   resolved "https://registry.npmjs.org/next/-/next-13.5.4.tgz"
   integrity sha512-+93un5S779gho8y9ASQhb/bTkQF17FNQOtXLKAj3lsNgltEcF0C5PMLLncDmH+8X1EnJH1kbqAERa29nRXqhjA==
@@ -4875,20 +4876,20 @@ synckit@0.8.5:
     "@pkgr/utils" "^2.3.1"
     tslib "^2.5.0"
 
-tailwindcss@^3.3.3:
-  version "3.3.3"
-  resolved "https://registry.npmjs.org/tailwindcss/-/tailwindcss-3.3.3.tgz"
-  integrity sha512-A0KgSkef7eE4Mf+nKJ83i75TMyq8HqY3qmFIJSWy8bNt0v1lG7jUcpGpoTFxAwYcWOphcTBLPPJg+bDfhDf52w==
+tailwindcss@^3.3.3, tailwindcss@^3.3.5:
+  version "3.3.5"
+  resolved "https://registry.npmjs.org/tailwindcss/-/tailwindcss-3.3.5.tgz"
+  integrity sha512-5SEZU4J7pxZgSkv7FP1zY8i2TIAOooNZ1e/OGtxIEv6GltpoiXUqWvLy89+a10qYTB1N5Ifkuw9lqQkN9sscvA==
   dependencies:
     "@alloc/quick-lru" "^5.2.0"
     arg "^5.0.2"
     chokidar "^3.5.3"
     didyoumean "^1.2.2"
     dlv "^1.1.3"
-    fast-glob "^3.2.12"
+    fast-glob "^3.3.0"
     glob-parent "^6.0.2"
     is-glob "^4.0.3"
-    jiti "^1.18.2"
+    jiti "^1.19.1"
     lilconfig "^2.1.0"
     micromatch "^4.0.5"
     normalize-path "^3.0.0"

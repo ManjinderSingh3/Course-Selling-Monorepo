@@ -1,3 +1,2 @@
 // component exports
-export * from "./components";
-export * from "./layout";
+export * from "./footer"
