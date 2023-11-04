@@ -8,7 +8,7 @@ function HomeRoot() {
   const userEmail = useRecoilValue(userEmailState); // Subscribing to Selector
   const userLoading = useRecoilValue(userLoadingState);
   return (
-    <div>
+    <div className="container">
       <Grid container>
         <Grid item xs={12} md={6} lg={6}>
           <div style={{ marginTop: 200 }}>

@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   transpilePackages: [
-    "ui",
+    "@course-selling-monorepo/ui",
     "db",
     "store",
     "@course-selling-monorepo/tailwind-config",
