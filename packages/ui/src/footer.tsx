@@ -4,16 +4,16 @@ import Link from "next/link";
 
 export const Footer = () => {
   return (
-    <footer>
-      <div>
-        <hr />
-      </div>
-
-      <div className="container flex justify-between mt-6">
-        <div>01</div>
-        <div className="flex ">
+    <footer className="border-t border-gray-200 bg-white/50 py-6 backdrop-blur-lg">
+      <div className="container flex justify-between -mb-8">
+        <div className="flex">
+          <p className="text-sm text-gray-500 text-center">
+            © {new Date().getFullYear()} Manjinder
+          </p>
+        </div>
+        <div className="flex">
           <a
-            href="https://github.com/steven-tey/dub"
+            href="https://github.com/ManjinderSingh3"
             target="_blank"
             rel="noreferrer"
             className="rounded-md p-2 transition-colors hover:bg-gray-100 active:bg-sky-200"
@@ -22,7 +22,7 @@ export const Footer = () => {
           </a>
           <div className="h-9 border-1 border-black-400" />
           <a
-            href="https://www.linkedin.com/company/dubhq/"
+            href="https://www.linkedin.com/in/manjinder-singh-dal/"
             target="_blank"
             rel="noreferrer"
             className="rounded-md p-2 transition-colors hover:bg-gray-100 active:bg-gray-200"
