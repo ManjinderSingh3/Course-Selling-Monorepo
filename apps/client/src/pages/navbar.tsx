@@ -1,6 +1,5 @@
 import { useRouter } from "next/router";
 import { signIn, signOut, useSession } from "next-auth/react";
-import { Typography, Button } from "@mui/material";
 import HomeRoot from "@/components/HomeRoot";
 import { useSetRecoilState } from "recoil";
 import { userState } from "store";
@@ -21,9 +20,9 @@ export const Navbar = () => {
             }}
           >
             <img src="/Logo.png" className="h-10 mr-3" />
-          
+
             <button
-              className="rounded-md text-md font-serif hover:bg-gray-100 hover:text-black p-2 text-gray-500"
+              className="rounded-md text-md text-gray-500 font-serif hover:bg-gray-100 hover:text-black p-1 mr-2"
               onClick={() => {
                 router.push("/");
               }}
@@ -31,7 +30,7 @@ export const Navbar = () => {
               Add Course
             </button>
             <button
-              className="rounded-md text-md font-serif hover:bg-gray-100 p-2 text-gray-500"
+              className="rounded-md text-md text-gray-500 font-serif hover:bg-gray-100 hover:text-black p-1 mr-2"
               onClick={() => {
                 router.push("/");
               }}
@@ -40,15 +39,15 @@ export const Navbar = () => {
             </button>
           </div>
           <div>
-          <button
-              className="rounded-md bg-black text-md font-serif hover:bg-black p-2 text-white"
+            <button
+              className="rounded-full bg-black text-md font-serif hover:bg-white hover:text-black px-4 py-1
+              text-white"
               onClick={() => {
                 signOut();
               }}
             >
               Logout
             </button>
-
           </div>
         </div>
         <div className="border-t mt-4 border-gray-200 bg-white/50 py-6 backdrop-blur-lg" />
@@ -61,56 +60,41 @@ export const Navbar = () => {
   } else {
     return (
       <div>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            padding: 5,
-          }}
-        >
+        <div className="container flex justify-between mt-4">
           <div
-            style={{ marginLeft: 10, cursor: "pointer" }}
+            className="cursor-pointer flex"
             onClick={() => {
               router.push("/");
             }}
           >
-            <Typography variant="h5"> CourseHub</Typography>
+            <img src="/Logo.png" className="h-10 mr-3 " />
           </div>
-          <div style={{ display: "flex" }}>
-            <div style={{ marginRight: 10, borderRadius: "20" }}>
-              <Button
+          <div className="flex mt-2">
+            <div className="mr-3">
+              <button
+                className="rounded-md text-md text-gray-500 font-serif hover:bg-gray-100 hover:text-black p-1 "
                 onClick={() => {
                   router.push("/signin");
                 }}
-                style={{ color: "#0d9488" }}
               >
-                Sign In
-              </Button>
+                Log in
+              </button>
             </div>
             <div>
-              <Button
-                variant="contained"
+              <button
+                className="rounded-full bg-black text-md font-serif hover:bg-white hover:text-black px-4 py-1
+               text-white"
                 onClick={() => {
                   signIn();
-                  // if(session.data){
-                  //   setUser({
-                  //     isLoading:false,
-                  //     userEmail: session.data.user?.email
-                  //   })
-                  // }
-                  router.push("/signin");
-                }}
-                style={{
-                  borderRadius: 9999,
-                  backgroundColor: "#0d9488",
-                  fontSize: ".875rem",
                 }}
               >
-                Signup
-              </Button>
+                Sign Up
+              </button>
             </div>
           </div>
         </div>
+        <div className="border-t mt-4 border-gray-200 bg-white/50 py-2 backdrop-blur-lg" />
+        <HomeRoot />
         <Footer />
       </div>
     );
