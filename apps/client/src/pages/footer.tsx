@@ -12,9 +12,15 @@ export const Footer = () => {
           <p className="text-sm text-black text-center mr-5 font-bold">
             © {new Date().getFullYear()} Manjinder
           </p>
-          <div className="text-sm mr-5">About</div>
-          <div className="text-sm mr-5">Contact</div>
-          <div className="text-sm">Privacy policy</div>
+          <div className="text-sm mr-5 text-gray-600 hover:text-black cursor-pointer hover:underline">
+            About
+          </div>
+          <div className="text-sm mr-5 text-gray-600 hover:text-black cursor-pointer hover:underline">
+            Contact
+          </div>
+          <div className="text-sm mr-5 text-gray-600 hover:text-black cursor-pointer hover:underline">
+            Privacy policy
+          </div>
         </div>
         <div className="flex">
           <a

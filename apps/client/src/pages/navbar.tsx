@@ -19,10 +19,10 @@ export const Navbar = () => {
               router.push("/");
             }}
           >
-            <img src="/Logo.png" className="h-10 mr-3" />
+            <img src="/Logo.png" className="h-10 mr-14" />
 
             <button
-              className="rounded-md text-md text-gray-500 font-serif hover:bg-gray-100 hover:text-black p-1 mr-2"
+              className="rounded-md text-md text-gray-600 font-serif hover:bg-gray-100 hover:text-black p-1 mr-2"
               onClick={() => {
                 router.push("/");
               }}
@@ -30,7 +30,7 @@ export const Navbar = () => {
               Add Course
             </button>
             <button
-              className="rounded-md text-md text-gray-500 font-serif hover:bg-gray-100 hover:text-black p-1 mr-2"
+              className="rounded-md text-md text-gray-600 font-serif hover:bg-gray-100 hover:text-black p-1 mr-2"
               onClick={() => {
                 router.push("/");
               }}
@@ -40,7 +40,7 @@ export const Navbar = () => {
           </div>
           <div>
             <button
-              className="rounded-full bg-black text-md font-serif hover:bg-white hover:text-black px-4 py-1
+              className="rounded-full bg-black text-md font-serif hover:bg-white hover:text-black mt-1.5 px-4 py-1
               text-white"
               onClick={() => {
                 signOut();
@@ -72,7 +72,7 @@ export const Navbar = () => {
           <div className="flex mt-2">
             <div className="mr-3">
               <button
-                className="rounded-md text-md text-gray-500 font-serif hover:bg-gray-100 hover:text-black p-1 "
+                className="rounded-md text-md text-gray-500 font-serif hover:bg-gray-100 hover:text-black  p-1 "
                 onClick={() => {
                   router.push("/signin");
                 }}
@@ -83,7 +83,7 @@ export const Navbar = () => {
             <div>
               <button
                 className="rounded-full bg-black text-md font-serif hover:bg-white hover:text-black px-4 py-1
-               text-white"
+               text-white hover:border-2 hover:border-black"
                 onClick={() => {
                   signIn();
                 }}
