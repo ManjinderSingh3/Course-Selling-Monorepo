@@ -12,6 +12,7 @@
     "@course-selling-monorepo/ui": "*",
     "db": "*",
     "@course-selling-monorepo/tailwind-config": "*",
+    "@course-selling-monorepo/utils": "*",
     "@types/jsonwebtoken": "^9.0.3",
     "@types/mongoose": "^5.11.97",
     "axios": "^1.5.1",

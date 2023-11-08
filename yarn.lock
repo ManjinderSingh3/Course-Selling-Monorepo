@@ -237,10 +237,11 @@
     "@emotion/styled" "^11.11.0"
     "@mui/material" "^5.14.13"
 
-"@course-selling-monorepo/utils@0.0.0", "@course-selling-monorepo/utils@file:/Users/manjinder/Desktop/Learning_Material/OpenSource_Course/Projects/TypeScript/BACKUP/MONOREPO/Course-Selling-Monorepo/packages/utils":
+"@course-selling-monorepo/utils@*", "@course-selling-monorepo/utils@0.0.0", "@course-selling-monorepo/utils@file:/Users/manjinder/Desktop/Learning_Material/OpenSource_Course/Projects/TypeScript/BACKUP/MONOREPO/Course-Selling-Monorepo/packages/utils":
   version "0.0.0"
   resolved "file:packages/utils"
   dependencies:
+    "@radix-ui/react-navigation-menu" "^1.1.4"
     class-variance-authority "^0.7.0"
     clsx "^2.0.0"
     lucide-react "^0.288.0"
@@ -742,7 +743,7 @@
     "@babel/runtime" "^7.13.10"
     "@radix-ui/react-slot" "1.0.2"
 
-"@radix-ui/react-slot@1.0.2":
+"@radix-ui/react-slot@^1.0.2", "@radix-ui/react-slot@1.0.2":
   version "1.0.2"
   resolved "https://registry.npmjs.org/@radix-ui/react-slot/-/react-slot-1.0.2.tgz"
   integrity sha512-YeTpuq4deV+6DusvVUW4ivBgnkHwECUu0BiN43L5UCDFgdhsRUWAghhTF5MbvNTPzmiFOx90asDSUjWuCNapwg==
@@ -1699,6 +1700,7 @@ client-only@0.0.1:
   dependencies:
     "@course-selling-monorepo/tailwind-config" "*"
     "@course-selling-monorepo/ui" "*"
+    "@course-selling-monorepo/utils" "*"
     "@types/jsonwebtoken" "^9.0.3"
     "@types/mongoose" "^5.11.97"
     axios "^1.5.1"
