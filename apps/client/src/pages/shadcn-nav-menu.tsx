@@ -1,97 +1,69 @@
 import * as React from "react";
 import { cn } from "@course-selling-monorepo/utils/src/index";
 import Link from "next/link";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
-} from "@course-selling-monorepo/utils/src/shadcn-components/navigation-menu";
+import { ChevronDown } from "lucide-react";
+import { COURSE_CATEGORIES_LIST } from "./course-categories";
+import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
 
 export function ShadcnNav() {
   return (
-    <div className="hidden gap-6 lg:flex">
-      <NavigationMenu>
-        <NavigationMenuList>
-          <NavigationMenuItem>
-            <NavigationMenuTrigger>Add Courses</NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                <li className="row-span-3">
-                  <NavigationMenuLink asChild>
-                    <a
-                      className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                      href="/"
-                    >
-                      <div className="mb-2 mt-4 text-lg font-medium">
-                        Course
-                      </div>
-                      <p className="text-sm leading-tight text-muted-foreground">
-                        Headache-Free Project Building: Embracing the Latest
-                        Tech with Ease.
-                      </p>
-                    </a>
-                  </NavigationMenuLink>
-                </li>
-                <ListItem
-                  href="https://github.com/ManjinderSingh3"
-                  title="Docs"
+    <div className="flex h-14 items-center justify-between">
+      <div className="flex items-center space-x-4">
+        <NavigationMenuPrimitive.Root
+          delayDuration={0}
+          className="relative hidden lg:block"
+        >
+          <NavigationMenuPrimitive.List className="flex flex-row space-x-2 p-4">
+            <NavigationMenuPrimitive.Item>
+              <NavigationMenuPrimitive.Trigger className="group flex items-center space-x-2 rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-100 focus:outline-none">
+                <p
+                  className={cn(
+                    "text-sm font-medium text-gray-500 transition-colors ease-out group-hover:text-black"
+                  )}
                 >
-                  Discover template insights.
-                </ListItem>
-                <ListItem
-                  href="https://github.com/ManjinderSingh3"
-                  title="Trpc"
-                >
-                  See TRPC in action.
-                </ListItem>
-                <ListItem
-                  href="https://github.com/ManjinderSingh3"
-                  title="Github"
-                >
-                  Contribute on GitHub."
-                </ListItem>
-              </ul>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <Link href="/" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  Categories
+                </p>
+                <ChevronDown className="h-4 w-4 transition-all group-data-[state=open]:rotate-180" />
+              </NavigationMenuPrimitive.Trigger>
+              <NavigationMenuPrimitive.Content>
+                <div className="grid w-[32rem] grid-cols-2 gap-1 p-3">
+                  {COURSE_CATEGORIES_LIST.map(
+                    ({ slug, icon: Icon, title, shortTitle }) => (
+                      <Link
+                        key={slug}
+                        href="/"
+                        className="rounded-lg p-3 transition-colors hover:bg-gray-100 active:bg-gray-200"
+                      >
+                        <div className="flex items-center space-x-2">
+                          <Icon className="h-4 w-4 text-gray-700" />
+                          <p className="text-sm font-medium text-gray-700">
+                            {shortTitle}
+                          </p>
+                        </div>
+                        <p className="mt-1 line-clamp-1 text-sm text-gray-500">
+                          {title}
+                        </p>
+                      </Link>
+                    )
+                  )}
+                </div>
+              </NavigationMenuPrimitive.Content>
+            </NavigationMenuPrimitive.Item>
+
+            <NavigationMenuPrimitive.Item>
+              <Link
+                href="/"
+                className={cn(
+                  " flex space-x-2 rounded-md px-3 py-2 hover:bg-gray-100 text-sm font-medium text-gray-500 transition-colors ease-out hover:text-black "
+                )}
+              >
                 Courses
-              </NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
-        </NavigationMenuList>
-      </NavigationMenu>
+              </Link>
+            </NavigationMenuPrimitive.Item>
+          </NavigationMenuPrimitive.List>
+          <NavigationMenuPrimitive.Viewport className="data-[state=closed]:animate-scale-out-content data-[state=open]:animate-scale-in-content absolute left-0 top-full flex w-[var(--radix-navigation-menu-viewport-width)] origin-[top_center] justify-start rounded-lg border border-gray-200 bg-white shadow-lg" />
+        </NavigationMenuPrimitive.Root>
+      </div>
     </div>
   );
 }
-
-const ListItem = React.forwardRef<
-  React.ElementRef<"a">,
-  React.ComponentPropsWithoutRef<"a">
->(({ className, title, children, ...props }, ref) => {
-  return (
-    <li>
-      <NavigationMenuLink asChild>
-        <a
-          ref={ref}
-          className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-            className
-          )}
-          {...props}
-        >
-          <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-            {children}
-          </p>
-        </a>
-      </NavigationMenuLink>
-    </li>
-  );
-});
-ListItem.displayName = "ListItem";
