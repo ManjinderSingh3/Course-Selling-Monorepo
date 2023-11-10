@@ -7,6 +7,7 @@ import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
 
 export function ShadcnNav() {
   return (
+    
     <div className="flex h-14 items-center justify-between">
       <div className="flex items-center space-x-4">
         <NavigationMenuPrimitive.Root
@@ -63,6 +64,21 @@ export function ShadcnNav() {
           </NavigationMenuPrimitive.List>
           <NavigationMenuPrimitive.Viewport className="data-[state=closed]:animate-scale-out-content data-[state=open]:animate-scale-in-content absolute left-0 top-full flex w-[var(--radix-navigation-menu-viewport-width)] origin-[top_center] justify-start rounded-lg border border-gray-200 bg-white shadow-lg" />
         </NavigationMenuPrimitive.Root>
+      </div>
+
+      <div className="hidden lg:block">
+        <Link
+          href="/"
+          className="animate-fade-in rounded-full px-4 py-1.5 text-sm font-medium text-gray-500 transition-colors ease-out hover:text-black"
+        >
+          Log in
+        </Link>
+        <Link
+          href="/"
+          className="animate-fade-in rounded-full border border-black bg-black px-4 py-1.5 text-sm text-white transition-all hover:bg-white hover:text-black"
+        >
+          Sign Up
+        </Link>
       </div>
     </div>
   );

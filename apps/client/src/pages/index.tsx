@@ -9,7 +9,7 @@ import { buttonVariants } from "@course-selling-monorepo/utils";
 export default function Home({ children }: React.PropsWithChildren) {
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background">
-      <div className="container flex h-16 items-center">
+      <div className="container flex h-16 items-center justify-between">
         <ShadcnNav />
       </div>
     </header>
