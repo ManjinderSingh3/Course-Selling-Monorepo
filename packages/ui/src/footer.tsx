@@ -1,6 +1,4 @@
-import { SocialHandles } from "@course-selling-monorepo/utils/";
 import { Github, LinkedIn, Twitter } from "./icons";
-import Link from "next/link";
 
 export const Footer = () => {
   return (
