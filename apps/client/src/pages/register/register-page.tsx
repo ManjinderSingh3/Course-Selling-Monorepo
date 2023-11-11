@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import RegisterForm from "./register-form";
+import {Button} from "@course-selling-monorepo/utils"
 
 export default function RegisterPage() {
   return (
@@ -11,6 +12,7 @@ export default function RegisterPage() {
         </p>
       </div>
       <div className="flex flex-col space-y-3 bg-gray-50 px-4 py-8 sm:px-16">
+        <Button>Continue with google</Button>
         <Suspense
         //   fallback={
         //     <>
