@@ -17,15 +17,15 @@
     "eslint-config-custom": "*",
     "postcss": "^8.4.31",
     "react": "^18.2.0",
-    "tailwindcss": "^3.3.3",
+    "tailwindcss": "^3.3.5",
     "tsconfig": "*",
-    "typescript": "^4.5.2"
+    "typescript": "^4.5.2",
+    "@course-selling-monorepo/tailwind-config": "*",
+    "@course-selling-monorepo/utils": "*"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
-    "@mui/material": "^5.14.13",
-    "@course-selling-monorepo/tailwind-config": "0.0.0",
-    "@course-selling-monorepo/utils": "0.0.0"
+    "@mui/material": "^5.14.13"    
   }
 }

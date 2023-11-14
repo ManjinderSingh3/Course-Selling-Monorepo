@@ -18,5 +18,8 @@
     "lucide-react": "^0.288.0",
     "tailwind-merge": "^2.0.0",
     "tailwindcss-animate": "^1.0.7"
+  },
+  "devDependencies": {
+    "@course-selling-monorepo/tailwind-config":"*"
   }
 }

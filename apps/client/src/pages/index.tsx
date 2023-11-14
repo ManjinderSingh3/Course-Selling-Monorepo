@@ -1,7 +1,10 @@
-//import { Navbar } from "./navbar";
+//import { Navbar } from "./ui-package-temp/navbar-shadcn";
+import { Navbar } from "@course-selling-monorepo/ui/src/navbar";
 import React from "react";
 import RegisterPage from "./register/register-page";
-import { Navbar } from "@course-selling-monorepo/ui";
+
+//import { Button } from "./utils-package-temp/shadcn-components/button";
+import {Button} from "@course-selling-monorepo/utils"
 
 //  ---------  Currently this handler has logic of Appbar  ----------
 export default function Home({ children }: React.PropsWithChildren) {
@@ -12,8 +15,9 @@ export default function Home({ children }: React.PropsWithChildren) {
           <Navbar />
         </div>
       </header>
-      <div className="">
+      <div className="flex ">
         <RegisterPage />
+        <Button className="text-red-500">Test</Button>
       </div>
     </div>
   );
