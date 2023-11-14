@@ -1,5 +1,17 @@
-import { Button } from "@course-selling-monorepo/utils";
+import { Button, Label, Input } from "@course-selling-monorepo/utils";
 
 export default function SignupForm() {
-  return <Button className="w-full">Create Account</Button>;
+  return (
+    <>
+      <div className="grid gap-2">
+        <Label htmlFor="email">Email</Label>
+        <Input id="email" type="email" placeholder="m@example.com" />
+      </div>
+      <div className="grid gap-2">
+        <Label htmlFor="password">Password</Label>
+        <Input id="password" type="password" />
+      </div>
+      <Button className="w-full">Create Account</Button>
+    </>
+  );
 }
