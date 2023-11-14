@@ -11,7 +11,7 @@ export default function SignupForm() {
         <Label htmlFor="password">Password</Label>
         <Input id="password" type="password" />
       </div>
-      <Button className="w-full">Create Account</Button>
+      <Button className="w-full">Sign In</Button>
     </>
   );
 }
