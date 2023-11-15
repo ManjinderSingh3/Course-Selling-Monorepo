@@ -4,7 +4,7 @@ import {
   Twitter,
 } from "@course-selling-monorepo/ui/src/icons";
 
-export const Footer = () => {
+export const OldFooter = () => {
   return (
     <footer className="border-t border-gray-200 bg-white/50 py-6 backdrop-blur-lg">
       <div className="container flex justify-between -mb-8">

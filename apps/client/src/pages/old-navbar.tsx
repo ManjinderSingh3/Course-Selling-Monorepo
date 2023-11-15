@@ -3,9 +3,9 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import HomeRoot from "@/components/HomeRoot";
 import { useSetRecoilState } from "recoil";
 import { userState } from "store";
-import { Footer } from "./footer";
+import { OldFooter } from "./old-footer";
 
-export const Navbar = () => {
+export const OldNavbar = () => {
   const router = useRouter();
   const session = useSession(); //This is a client side hook. It runs on client side and sends backend request to get user's details
   //const setUser = useSetRecoilState(userState);
@@ -53,7 +53,7 @@ export const Navbar = () => {
         <div className="border-t mt-4 border-gray-200 bg-white/50 py-6 backdrop-blur-lg" />
         <div>
           <HomeRoot />
-          <Footer />
+          <OldFooter />
         </div>
       </div>
     );
@@ -95,7 +95,7 @@ export const Navbar = () => {
         </div>
         <div className="border-t mt-4 border-gray-200 bg-white/50 py-2 backdrop-blur-lg" />
         <HomeRoot />
-        <Footer />
+        <OldFooter />
       </div>
     );
   }
