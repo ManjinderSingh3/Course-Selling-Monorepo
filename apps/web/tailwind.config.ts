@@ -1,18 +1,20 @@
-import type { Config } from "tailwindcss";
-import sharedConfig from "@course-selling-monorepo/tailwind-config/tailwind.config";
+import type { Config } from 'tailwindcss'
 
-const config: Pick<Config, "presets"> = {
-  presets: [
-    {
-      ...sharedConfig,
-      content: [
-        "./app/**/*.{js,ts,jsx,tsx}",
-        "./pages/**/*.{ts,tsx}",
-        "./components/**/*.{ts,tsx}",
-        "./src/**/*.{ts,tsx}",
-      ],
-    },
+const config: Config = {
+  content: [
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
-};
-
-export default config;
+  theme: {
+    extend: {
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-conic':
+          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      },
+    },
+  },
+  plugins: [],
+}
+export default config

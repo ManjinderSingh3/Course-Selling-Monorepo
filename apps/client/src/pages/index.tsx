@@ -1,9 +1,9 @@
 import React from "react";
 import RegisterPage from "./register/register-page";
 
-import { TempNavbar } from "./ui-package-temp/navbar-shadcn";
+import { TempNavbar } from "./package-ui-temp/navbar-shadcn";
 import { Navbar } from "@course-selling-monorepo/ui/src/navbar";
-import { Button } from "./utils-package-temp/shadcn-components/button";
+import { Button } from "./package-utils-temp/shadcn-components/button";
 //import {Button} from "@course-selling-monorepo/utils"
 
 //  ---------  Currently this handler has logic of Appbar  ----------
