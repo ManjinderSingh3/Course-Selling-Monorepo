@@ -1,5 +1,5 @@
 {
-  "name": "course-selling-monorepo-web-appb",
+  "name": "course-selling-monorepo-web-app",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -12,25 +12,26 @@
     "@course-selling-monorepo/tailwind-config": "*",
     "@course-selling-monorepo/ui": "*",
     "@course-selling-monorepo/utils": "*",
-    "db":"*",
     "@radix-ui/react-icons": "^1.3.0",
+    "@radix-ui/react-navigation-menu": "^1.1.4",
     "@types/jsonwebtoken": "^9.0.3",
     "@types/mongoose": "^5.11.97",
+    "axios": "^1.5.1",
+    "db": "*",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^7.6.2",
-    "axios": "^1.5.1",
-    "react": "^18",
-    "react-dom": "^18",
     "next": "14.0.3",
-    "next-auth": "^4.24.3"
+    "next-auth": "^4.24.3",
+    "react": "^18",
+    "react-dom": "^18"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
     "postcss": "^8",
-    "tailwindcss": "^3.3.0"
+    "tailwindcss": "^3.3.0",
+    "typescript": "^5"
   }
 }

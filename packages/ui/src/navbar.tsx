@@ -1,3 +1,4 @@
+"use client";
 import * as React from "react";
 import { cn } from "@course-selling-monorepo/utils/src/index";
 import Link from "next/link";
@@ -82,4 +83,3 @@ export function Navbar() {
     </div>
   );
 }
-
