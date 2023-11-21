@@ -8,7 +8,7 @@ import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
 
 export function Navbar() {
   return (
-    <div className="flex h-14 items-center justify-between">
+    <div className="flex h-14 items-center container justify-between">
       <div className="flex items-center space-x-4">
         <NavigationMenuPrimitive.Root
           delayDuration={0}
