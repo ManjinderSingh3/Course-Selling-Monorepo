@@ -1,8 +1,8 @@
+"use client";
 import Link from "next/link";
-import React from "react";
 import { CardFooter } from "@course-selling-monorepo/utils";
 
-export default function SignupFormFooter() {
+export function SignupFormFooter() {
   return (
     <CardFooter>
       <div className="text-sm text-muted-foreground">

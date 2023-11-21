@@ -1,10 +1,10 @@
 "use client";
-import * as React from "react";
 import { cn } from "@course-selling-monorepo/utils/src/index";
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
 import { COURSE_CATEGORIES_LIST } from "./course-categories";
 import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
+import { Button } from "@course-selling-monorepo/utils";
 
 export function Navbar() {
   return (
@@ -79,6 +79,9 @@ export function Navbar() {
         >
           Sign Up
         </Link>
+      </div>
+      <div>
+        <Button className="w-full">Sign In</Button>
       </div>
     </div>
   );

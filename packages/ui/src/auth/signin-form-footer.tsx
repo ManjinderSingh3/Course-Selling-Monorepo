@@ -1,7 +1,8 @@
+"use client";
 import Link from "next/link";
 import { CardFooter } from "@course-selling-monorepo/utils";
 
-export default function SigninFormFooter() {
+export function SigninFormFooter() {
   return (
     <CardFooter className="flex flex-wrap items-center justify-between gap-2">
       <div className="text-sm text-muted-foreground">

@@ -1,6 +1,7 @@
+"use client";
 import { Button, Label, Input } from "@course-selling-monorepo/utils";
 
-export default function SignupForm() {
+export function SigninForm() {
   return (
     <>
       <div className="grid gap-2">

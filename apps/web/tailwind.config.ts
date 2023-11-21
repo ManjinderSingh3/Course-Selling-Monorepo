@@ -5,19 +5,13 @@ const config: Pick<Config, "presets"> = {
   presets: [
     {
       ...sharedConfig,
-      content: ["../web/**/*.{ts,tsx}", "../../packages/ui/**/*.{ts,tsx}"],
+      content: [
+        "../web/**/*.{ts,tsx}",
+        "../../packages/ui/**/*.{ts,tsx}",
+        "../../packages/utils/**/*.{ts,tsx}",
+      ],
     },
   ],
 };
 
 export default config;
-
-// export default {
-//   content: [
-//     ...sharedConfig.content,
-//     "../../apps/web/**/*.{ts,tsx}",
-//     "../../packages/ui/**/*.{ts,tsx}",
-//     "../../packages/shadcn/**/*.{ts,tsx}",
-//   ],
-//   presets: [sharedConfig],
-// } satisfies Config;
