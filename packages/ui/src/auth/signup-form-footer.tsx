@@ -9,8 +9,8 @@ export function SignupFormFooter() {
         Already have an account?{" "}
         <Link
           aria-label="Sign in"
-          href="/"
-          className="text-primary underline-offset-4 transition-colors hover:underline"
+          href="/sign-in"
+          className="text-black underline-offset-4 transition-colors hover:underline hover:font-bold"
         >
           Sign in
         </Link>

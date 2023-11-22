@@ -11,19 +11,19 @@ export function SigninFormFooter() {
         </span>
         <Link
           aria-label="Sign up"
-          href="/"
-          className="text-primary underline-offset-4 transition-colors hover:underline"
+          href="/sign-up"
+          className="text-primary underline-offset-4 transition-colors hover:underline hover:font-bold"
         >
           Sign up
         </Link>
       </div>
-      <Link
+      {/* <Link
         aria-label="Reset password"
         href="/"
         className="text-sm text-primary underline-offset-4 transition-colors hover:underline"
       >
         Reset password
-      </Link>
+      </Link> */}
     </CardFooter>
   );
 }

@@ -15,8 +15,8 @@ export default function Signin() {
     <Authorization
       OAuthSignIn={<></>}
       signInOrUpComp={<SigninForm />}
-      title="Sign In to your account"
-      description="Choose preferred method to Sign in"
+      title="Sign In"
+      description="Choose your preferred method to Sign in"
       cardFooter={<SigninFormFooter />}
     />
   );
