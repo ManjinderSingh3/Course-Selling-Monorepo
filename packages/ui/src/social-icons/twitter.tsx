@@ -1,4 +1,4 @@
-export default function Twitter({
+export function Twitter({
   className,
   fill = "#0a0a0a",
 }: {

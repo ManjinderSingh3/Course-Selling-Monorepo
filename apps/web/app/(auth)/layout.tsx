@@ -2,8 +2,6 @@ export default function AuthorizationLayout({
   children,
 }: React.PropsWithChildren) {
   return (
-    <main className="container absolute top-1/2 col-span-1 flex -translate-y-1/2 items-center md:static md:top-0 md:col-span-2 md:flex md:translate-y-0 lg:col-span-1">
-      {children}
-    </main>
+    <div className="flex h-screen items-center justify-center">{children}</div>
   );
 }

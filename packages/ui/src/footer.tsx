@@ -1,4 +1,4 @@
-import { Github, LinkedIn, Twitter } from "./icons";
+import { Github, LinkedIn, Twitter } from "./social-icons";
 
 export const Footer = () => {
   return (

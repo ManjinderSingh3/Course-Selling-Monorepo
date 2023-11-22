@@ -11,10 +11,6 @@ export default function Home() {
   return (
     <div>
       <Navbar />
-      <SignupForm />
-      <SignupFormFooter />
-      <SigninForm />
-      <SigninFormFooter />
       {/* <Button className="w-full">Sign In 2</Button>      */}
     </div>
   );

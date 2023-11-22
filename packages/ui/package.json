@@ -9,6 +9,8 @@
     "generate:component": "turbo gen react-component"
   },
   "devDependencies": {
+    "@course-selling-monorepo/tailwind-config": "*",
+    "@course-selling-monorepo/utils": "*",
     "@turbo/gen": "^1.10.12",
     "@types/node": "^20.5.2",
     "@types/react": "^18.2.0",
@@ -19,13 +21,12 @@
     "react": "^18.2.0",
     "tailwindcss": "^3.3.5",
     "tsconfig": "*",
-    "typescript": "^4.5.2",
-    "@course-selling-monorepo/tailwind-config": "*",
-    "@course-selling-monorepo/utils": "*"
+    "typescript": "^4.5.2"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
-    "@mui/material": "^5.14.13"    
+    "@mui/material": "^5.14.13",
+    "lucide-react": "^0.292.0"
   }
 }

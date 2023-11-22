@@ -2,7 +2,7 @@ import {
   Github,
   LinkedIn,
   Twitter,
-} from "@course-selling-monorepo/ui/src/icons";
+} from "@course-selling-monorepo/ui/src/social-icons";
 
 export const OldFooter = () => {
   return (
