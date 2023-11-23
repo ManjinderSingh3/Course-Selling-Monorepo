@@ -5,4 +5,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export * from "./shadcn-components";
+export * from "./shadcn-components/button";
+export * from "./shadcn-components/card";
+export * from "./shadcn-components/label";
+export * from "./shadcn-components/input";

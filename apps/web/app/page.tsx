@@ -11,7 +11,9 @@ export default function Home() {
   return (
     <div>
       <Navbar />
-      {/* <Button className="w-full">Sign In 2</Button>      */}
+      <div className="flex justify-center">
+        <Button>Test</Button>
+      </div>
     </div>
   );
 }
