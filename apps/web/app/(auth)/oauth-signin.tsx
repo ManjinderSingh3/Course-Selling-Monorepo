@@ -23,7 +23,7 @@ export const OAuthSignIn = () => {
   async function handleClick(provider: OAuthProviders) {
     try {
       const data = await signIn(provider, { callbackUrl: "/", redirect: true });
-      console.log(provider);
+      //await new Promise((resolve) => setTimeout(resolve, 10000));
     } catch (error) {
       console.log(error);
     }
