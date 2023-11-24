@@ -4,6 +4,7 @@ const nextConfig = {
     "@course-selling-monorepo/ui",
     "@course-selling-monorepo/tailwind-config",
     "@course-selling-monorepo/utils",
+    "@course-selling-monorepo/auth",
     "db",
     "store",
   ],

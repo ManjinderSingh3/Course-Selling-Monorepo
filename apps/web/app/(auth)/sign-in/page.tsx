@@ -4,6 +4,7 @@ import {
   SigninFormFooter,
 } from "@course-selling-monorepo/ui";
 import type { Metadata } from "next";
+import { OAuthSignIn } from "../oauth-signin";
 
 export const metadata: Metadata = {
   title: "Sign in to CourseHub",
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
 export default function Signin() {
   return (
     <Authorization
-      OAuthSignIn={<></>}
+      OAuthSignIn={<OAuthSignIn />}
       signInOrUpComp={<SigninForm />}
       title="Sign In"
       description="Choose your preferred method to Sign in"
