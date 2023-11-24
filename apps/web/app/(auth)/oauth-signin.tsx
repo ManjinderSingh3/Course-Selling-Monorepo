@@ -3,6 +3,7 @@ import { OAuthProviders } from "@course-selling-monorepo/auth";
 import { Icons } from "@course-selling-monorepo/ui";
 import { Button } from "@course-selling-monorepo/utils";
 import { useState } from "react";
+import { signIn } from "next-auth/react";
 
 type OAuthProviderProps = {
   name: string;
@@ -21,6 +22,7 @@ export const OAuthSignIn = () => {
 
   async function handleClick(provider: OAuthProviders) {
     try {
+      const data = await signIn(provider, { callbackUrl: "/", redirect: true });
       console.log(provider);
     } catch (error) {
       console.log(error);
@@ -42,6 +44,14 @@ export const OAuthSignIn = () => {
               await handleClick(provider.provider);
             }}
           >
+            {isLoading ? (
+              <Icons.spinner
+                className="mr-2 h-4 w-4 animate-spin"
+                aria-label="loading..."
+              />
+            ) : (
+              <Icon className="mr-2 h-4 w-4" aria-label="laoding..." />
+            )}
             {provider.name}
           </Button>
         );

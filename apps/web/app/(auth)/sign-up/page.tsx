@@ -4,6 +4,7 @@ import {
   SignupFormFooter,
 } from "@course-selling-monorepo/ui";
 import type { Metadata } from "next";
+import { OAuthSignIn } from "../oauth-signin";
 
 export const metadata: Metadata = {
   title: "Sign up to CourseHub",
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
 export default function Signup() {
   return (
     <Authorization
-      OAuthSignIn={<></>}
+      OAuthSignIn={<OAuthSignIn />}
       signInOrUpComp={<SignupForm />}
       title="Create an Account"
       description="Please enter your email below to create account"

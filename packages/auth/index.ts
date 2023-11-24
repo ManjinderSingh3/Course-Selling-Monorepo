@@ -4,6 +4,8 @@ import FacebookProvider from "next-auth/providers/facebook";
 
 import { type NextAuthOptions } from "next-auth";
 
+export type OAuthProviders = (typeof providers)[number];
+export const providers = ["google", "facebook", "discord"] as const;
 export const authOptions: NextAuthOptions = {
   providers: [
     GoogleProvider({
@@ -11,4 +13,12 @@ export const authOptions: NextAuthOptions = {
       clientSecret: process.env.GOOGLE_CLIENT_SECRET || "",
     }),
   ],
+  secret: process.env.NEXTAUTH_SECRET as string,
+  // session: {
+  //   strategy: "jwt",
+  //   maxAge: 30 * 24 * 60 * 60, //30 days
+  // },
+  // jwt: {
+  //   encryption: true,
+  // },
 };
