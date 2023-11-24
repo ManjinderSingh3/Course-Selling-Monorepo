@@ -1,7 +1,18 @@
-import { Loader2, type LucideProps } from "lucide-react";
+import {
+  Loader2,
+  User,
+  FileTerminal,
+  Settings,
+  LogOut,
+  type LucideProps,
+} from "lucide-react";
 
 export const Icons = {
   spinner: Loader2,
+  user: User,
+  terminal: FileTerminal,
+  settings: Settings,
+  logout: LogOut,
   google: ({ ...props }: LucideProps) => (
     <svg
       aria-hidden="true"

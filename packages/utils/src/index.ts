@@ -9,3 +9,4 @@ export * from "./shadcn-components/button";
 export * from "./shadcn-components/card";
 export * from "./shadcn-components/label";
 export * from "./shadcn-components/input";
+export * from "./shadcn-components/dropdown-menu";
