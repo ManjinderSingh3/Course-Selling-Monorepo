@@ -9,3 +9,4 @@ export * from "./auth/signup-form-footer";
 export * from "./auth/signin-form";
 export * from "./auth/signin-form-footer";
 export * from "./user-profile-dropdown";
+export * from "./signin-signup-buttons";

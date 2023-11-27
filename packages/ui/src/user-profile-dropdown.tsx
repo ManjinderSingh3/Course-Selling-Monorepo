@@ -75,7 +75,7 @@ export const UserProfileDropdown = ({
           </DropdownMenuItem>
           <DropdownMenuSeparator />
           <DropdownMenuItem asChild className="cursor-pointer">
-            <Link href={"/sign-out"}>
+            <Link href={"/sign-up"}>
               <Icons.logout className="h-4 w-4 mr-2" />
               Logout
             </Link>

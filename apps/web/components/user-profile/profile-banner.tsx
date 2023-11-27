@@ -1,8 +1,8 @@
 import { UserProfileDropdown } from "@course-selling-monorepo/ui";
-import Link from "next/link";
 import { buttonVariants } from "@course-selling-monorepo/utils";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@course-selling-monorepo/auth";
+import { SigninAndSignupButtons } from "@course-selling-monorepo/ui";
 
 export const ProfileBanner = async () => {
   const data = await getServerSession(authOptions);
@@ -18,9 +18,7 @@ export const ProfileBanner = async () => {
           ></UserProfileDropdown>
         </>
       ) : (
-        <Link href={"/sign-in"}>
-          
-        </Link>
+        <SigninAndSignupButtons />
       )}
     </>
   );
