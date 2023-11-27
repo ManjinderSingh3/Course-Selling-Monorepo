@@ -24,7 +24,7 @@ export function Navbar() {
                   >
                     Categories
                   </p>
-                  <ChevronDown className="h-4 w-4 transition-all group-data-[state=open]:rotate-180" />
+                  <ChevronDown className="h-4 w-4 transition-all group-data-[state=open]:rotate-180 text-muted-foreground " />
                 </NavigationMenuPrimitive.Trigger>
                 <NavigationMenuPrimitive.Content>
                   <div className="grid w-[32rem] grid-cols-2 gap-1 p-3">

@@ -10,7 +10,7 @@ export function SignupFormFooter() {
         <Link
           aria-label="Sign in"
           href="/sign-in"
-          className="text-black underline-offset-4 transition-colors hover:underline hover:font-bold"
+          className="text-primary underline-offset-4 transition-colors hover:underline hover:font-bold"
         >
           Sign in
         </Link>

@@ -5,7 +5,7 @@ export function SigninAndSignupButtons() {
     <div className="hidden lg:block">
       <Link
         href="/sign-in"
-        className="animate-fade-in rounded-full px-4 py-1.5 text-sm font-medium text-gray-500 transition-colors ease-out hover:text-black"
+        className="animate-fade-in rounded-full px-4 py-1.5 text-sm font-medium text-gray-500 transition-colors ease-out hover:text-primary"
       >
         Sign in
       </Link>
