@@ -1,6 +1,6 @@
 "use client";
 import { signOut } from "next-auth/react";
-import { Button } from "@course-selling-monorepo/utils";
+import { Button, buttonVariants } from "@course-selling-monorepo/utils";
 import React, { useState } from "react";
 import Link from "next/link";
 import {
@@ -34,17 +34,18 @@ export function Signout() {
           {isLoading && <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />}
           Sign out
         </Button>
-        <Button
-          size={"sm"}
-          aria-label="Go back"
-          className="w-full mt-4"
-          variant="outline"
-          onClick={() => {
-            // TODO : Navigate to Homepage
-          }}
-        >
-          Go back
-        </Button>
+
+        <Link href={"/"}>
+          <div
+            className={buttonVariants({
+              size: "sm",
+              className: "w-full mt-4",
+              variant: "outline",
+            })}
+          >
+            Go back
+          </div>
+        </Link>
       </CardContent>
     </Card>
   );

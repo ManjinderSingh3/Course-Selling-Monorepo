@@ -6,7 +6,6 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@course-selling-monorepo/utils";
-import React from "react";
 import { Icons } from "./auth-providers-icon/icons";
 import { Button } from "@course-selling-monorepo/utils";
 import {

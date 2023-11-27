@@ -11,3 +11,4 @@ export * from "./shadcn-components/label";
 export * from "./shadcn-components/input";
 export * from "./shadcn-components/dropdown-menu";
 export * from "./shadcn-components/avatar";
+export * from "./shadcn-components/skeleton";

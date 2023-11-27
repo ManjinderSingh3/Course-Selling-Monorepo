@@ -4,8 +4,6 @@ import Link from "next/link";
 import { ChevronDown } from "lucide-react";
 import { COURSE_CATEGORIES_LIST } from "./course-categories";
 import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
-import { Button } from "@course-selling-monorepo/utils";
-import { SigninAndSignupButtons } from "./signin-signup-buttons";
 
 export function Navbar() {
   return (
@@ -67,14 +65,7 @@ export function Navbar() {
             <NavigationMenuPrimitive.Viewport className="data-[state=closed]:animate-scale-out-content data-[state=open]:animate-scale-in-content absolute left-0 top-full flex w-[var(--radix-navigation-menu-viewport-width)] origin-[top_center] justify-start rounded-lg border border-gray-200 bg-white shadow-lg" />
           </NavigationMenuPrimitive.Root>
         </div>
-
-        <div>
-          <SigninAndSignupButtons />
-        </div>
-
-        <div></div>
       </div>
-      <div className="border-t border-gray-200 bg-white/50 py-2 backdrop-blur-lg" />
     </div>
   );
 }

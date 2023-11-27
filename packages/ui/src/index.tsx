@@ -11,3 +11,4 @@ export * from "./auth/signin-form-footer";
 export * from "./user-profile-dropdown";
 export * from "./signin-signup-buttons";
 export * from "./signout";
+export * from "./app-layout/App-Header";
