@@ -2,19 +2,19 @@ import { Airplay, BarChart, BookOpen, ClipboardCheck } from "lucide-react";
 
 export const COURSE_CATEGORIES_LIST = [
   {
-    title: "Deep Dive in the World of Analytics",
+    title: "Welcome to world of Analytics",
     shortTitle: "Data Analytics",
     icon: BarChart,
     slug: "/",
   },
   {
-    title: "Build modern website with latest Tech-Stack",
+    title: "Build tech heavy websites",
     shortTitle: "Web Development",
     icon: Airplay,
     slug: "/",
   },
   {
-    title: "Let's build machines who think like Humans !",
+    title: "Build self learning machines ",
     shortTitle: "Machine Learning",
     icon: BookOpen,
     slug: "/",

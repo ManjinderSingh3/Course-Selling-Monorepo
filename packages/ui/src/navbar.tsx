@@ -2,7 +2,7 @@
 import { cn } from "@course-selling-monorepo/utils/src/index";
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
-import { COURSE_CATEGORIES_LIST } from "./course-categories";
+import { COURSE_CATEGORIES_LIST } from "./navbar-course-categories";
 import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
 
 export function Navbar() {
