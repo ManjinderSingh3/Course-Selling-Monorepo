@@ -2,7 +2,11 @@ import { Navbar } from "@course-selling-monorepo/ui";
 import { Button } from "@course-selling-monorepo/utils";
 import { getUser } from "@course-selling-monorepo/auth";
 import { ProfileBanner } from "@/components/user-profile/profile-banner";
-import { AppHeader, ModeToggle } from "@course-selling-monorepo/ui";
+import {
+  AppHeader,
+  ModeToggle,
+  NavbarMobile,
+} from "@course-selling-monorepo/ui";
 
 async function helper() {
   const user = await getUser();
@@ -15,7 +19,8 @@ export default function Home() {
     <div>
       <AppHeader>
         <ProfileBanner />
-        <ModeToggle/>
+        <ModeToggle />
+        <NavbarMobile />
       </AppHeader>
     </div>
   );

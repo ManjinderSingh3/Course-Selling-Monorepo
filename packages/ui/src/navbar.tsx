@@ -19,12 +19,12 @@ export function Navbar() {
                 <NavigationMenuPrimitive.Trigger className="group flex items-center space-x-2 rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-100 focus:outline-none">
                   <p
                     className={cn(
-                      "text-sm font-medium text-gray-500 transition-colors ease-out group-hover:text-black"
+                      "text-sm font-medium text-primary transition-colors ease-out group-hover:text-black"
                     )}
                   >
                     Categories
                   </p>
-                  <ChevronDown className="h-4 w-4 transition-all group-data-[state=open]:rotate-180 text-muted-foreground " />
+                  <ChevronDown className="h-4 w-4 transition-all group-data-[state=open]:rotate-180 text-primary group-hover:text-black" />
                 </NavigationMenuPrimitive.Trigger>
                 <NavigationMenuPrimitive.Content>
                   <div className="grid w-[32rem] grid-cols-2 gap-1 p-3">
@@ -55,7 +55,7 @@ export function Navbar() {
                 <Link
                   href="/"
                   className={cn(
-                    " flex space-x-2 rounded-md px-3 py-2 hover:bg-gray-100 text-sm font-medium text-gray-500 transition-colors ease-out hover:text-black "
+                    " flex space-x-2 rounded-md px-3 py-2 hover:bg-gray-100 text-sm font-medium text-primary transition-colors ease-out hover:text-black "
                   )}
                 >
                   Courses
