@@ -56,26 +56,26 @@ export const UserProfileDropdown = ({
           </DropdownMenuLabel>
           <DropdownMenuSeparator />
           <DropdownMenuItem asChild className="cursor-pointer">
-            <Link href={"/dashboard/account"}>
+            <Link href={"/"}>
               <Icons.user className="h-4 w-4 mr-2" />
               Account
             </Link>
           </DropdownMenuItem>
           <DropdownMenuItem asChild className="cursor-pointer">
-            <Link href={"/dashboard/stores"}>
+            <Link href={"/"}>
               <Icons.terminal className="h-4 w-4 mr-2" />
               Dashboard
             </Link>
           </DropdownMenuItem>
           <DropdownMenuItem asChild className="cursor-pointer">
-            <Link href={"/dashboard/settings"}>
+            <Link href={"/"}>
               <Icons.settings className="h-4 w-4 mr-2" />
               Settings
             </Link>
           </DropdownMenuItem>
           <DropdownMenuSeparator />
           <DropdownMenuItem asChild className="cursor-pointer">
-            <Link href={"/sign-up"}>
+            <Link href={"/sign-out"}>
               <Icons.logout className="h-4 w-4 mr-2" />
               Logout
             </Link>
