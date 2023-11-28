@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export function SigninAndSignupButtons() {
   return (
-    <div className="hidden lg:block">
+    <div className="hidden lg:block mb-1.5">
       <Link
         href="/sign-in"
         className="animate-fade-in rounded-full px-4 py-1.5 text-sm font-medium text-primary transition-colors ease-out hover:text-primary"

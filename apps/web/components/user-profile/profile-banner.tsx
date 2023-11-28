@@ -8,7 +8,7 @@ export const ProfileBanner = async () => {
   const initials = `${data?.user?.name?.charAt(0) ?? ""}`;
 
   return (
-    <>
+    <div className="hidden lg:block mt-1.5 mr-2">
       {data?.user ? (
         <>
           <UserProfileDropdown
@@ -19,6 +19,6 @@ export const ProfileBanner = async () => {
       ) : (
         <SigninAndSignupButtons />
       )}
-    </>
+    </div>
   );
 };

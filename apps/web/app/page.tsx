@@ -19,8 +19,6 @@ export default function Home() {
     <div>
       <AppHeader>
         <ProfileBanner />
-        <ModeToggle />
-        <NavbarMobile />
       </AppHeader>
     </div>
   );

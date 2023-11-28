@@ -1,6 +1,8 @@
 import React, { Suspense } from "react";
 import { Navbar } from "../navbar";
 import { cn, Skeleton, buttonVariants } from "@course-selling-monorepo/utils";
+import { NavbarMobile } from "../navbar-mobile";
+import { ModeToggle } from "../theme-toggle";
 
 export const AppHeader = async ({ children }: React.PropsWithChildren) => {
   return (
@@ -25,6 +27,8 @@ export const AppHeader = async ({ children }: React.PropsWithChildren) => {
             </Suspense>
           </nav>
         </div>
+        <ModeToggle />
+        <NavbarMobile />
       </div>
     </header>
   );
