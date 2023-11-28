@@ -27,7 +27,7 @@ export function NavbarMobile() {
       </button>
       <nav
         className={cn(
-          "fixed inset-0 z-20 hidden w-full bg-white px-5 py-16 lg:hidden",
+          "fixed inset-0 z-20 hidden w-full px-5 py-16 lg:hidden",
           open && "block"
         )}
       >

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ChevronDown } from "lucide-react";
 import { COURSE_CATEGORIES_LIST } from "./navbar-course-categories";
 import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
+import { NAVBAR_ITEMS } from "./navbar-items";
 
 export function Navbar() {
   return (
@@ -58,7 +59,29 @@ export function Navbar() {
                     " flex space-x-2 rounded-md px-3 py-2 hover:bg-gray-100 text-sm font-medium text-primary transition-colors ease-out hover:text-black "
                   )}
                 >
-                  Courses
+                  About
+                </Link>
+              </NavigationMenuPrimitive.Item>
+
+              <NavigationMenuPrimitive.Item>
+                <Link
+                  href="/"
+                  className={cn(
+                    " flex space-x-2 rounded-md px-3 py-2 hover:bg-gray-100 text-sm font-medium text-primary transition-colors ease-out hover:text-black "
+                  )}
+                >
+                  My Courses
+                </Link>
+              </NavigationMenuPrimitive.Item>
+
+              <NavigationMenuPrimitive.Item>
+                <Link
+                  href="/"
+                  className={cn(
+                    " flex space-x-2 rounded-md px-3 py-2 hover:bg-gray-100 text-sm font-medium text-primary transition-colors ease-out hover:text-black "
+                  )}
+                >
+                  Contact
                 </Link>
               </NavigationMenuPrimitive.Item>
             </NavigationMenuPrimitive.List>
