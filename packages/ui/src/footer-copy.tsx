@@ -1,67 +1,91 @@
+"use client";
 import { Github, LinkedIn, Twitter } from "./social-icons";
+import { FOOTER_ITEMS } from "./footer-items";
+import Link from "next/link";
 
 export const FooterCopy = () => {
   return (
-    <footer className="w-full border-t bg-background">
-      {/* <section
-          id="footer-bottom"
-          aria-labelledby="footer-bottom-heading"
-          className="container flex flex-col xl:flex-row lg:flex-row md:flex-row sm:flex-row items-center space-x-4"
-        > */}
-      <div className="hidden lg:block">
-        <div className="text-left text-sm leading-loose text-muted-foreground">
-          Built by{" "}
-          <a
-            aria-label="Kickflip tutorial on YouTube"
-            href="/"
-            target="_blank"
-            rel="noreferrer"
-            className="font-semibold transition-colors hover:text-foreground"
-          >
-            Manjinder
-          </a>
-          .
+    <footer className="container z-10 border-t border-gray-200 py-8 backdrop-blur-lg">
+      <div className="xl:grid xl:grid-cols-5 xl:gap-8">
+        <div className="space-y-8 xl:col-span-2">
+          <p className="text-sm text-primary">
+            © {new Date().getFullYear()} Manjinder
+          </p>
+          <div className="flex items-center space-x-2">
+            <a
+              href="https://twitter.com/Manjindersinghw"
+              target="_blank"
+              rel="noreferrer"
+              className="group rounded-md p-2 transition-colors hover:bg-gray-100 "
+            >
+              <span className="sr-only">Twitter</span>
+              <Twitter className="h-5 w-5 text-primary" />
+            </a>
+            <div className="h-8 border-l border-gray-200" />
+            <a
+              href="https://github.com/ManjinderSingh3"
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-md p-2 transition-colors hover:bg-gray-100 active:bg-gray-200"
+            >
+              <span className="sr-only">Github</span>
+              <Github className="h-5 w-5 " />
+            </a>
+            <div className="h-8 border-l border-gray-200" />
+            <a
+              href="https://www.linkedin.com/in/manjinder-singh-dal/"
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-md p-2 transition-colors hover:bg-gray-100 active:bg-gray-200"
+            >
+              <span className="sr-only">LinkedIn</span>
+              <LinkedIn className="h-5 w-5" fill="#52525B" />
+            </a>
+          </div>
         </div>
-        <div className="text-left text-sm leading-loose text-muted-foreground">
-          Built by{" "}
-          <a
-            aria-label="Kickflip tutorial on YouTube"
-            href="/"
-            target="_blank"
-            rel="noreferrer"
-            className="font-semibold transition-colors hover:text-foreground"
-          >
-            Manjinder
-          </a>
-          .
+
+        <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-3 xl:mt-0">
+          <div className="md:grid md:grid-cols-2 md:gap-8">
+            <div>
+              <h3 className="text-sm font-semibold text-primary">Features</h3>
+              {/* <ul role="list" className="mt-4 space-y-4">
+                  {navigation.features.map((item) => (
+                    <li key={item.name}>
+                      <Link
+                        href={createHref(item.href)}
+                        {...(domain !== "dub.co" && {
+                          onClick: () => {
+                            va.track("Referred from custom domain", {
+                              domain,
+                              medium: `footer item (${item.name})`,
+                            });
+                          },
+                        })}
+                        className="text-sm text-gray-500 hover:text-gray-900"
+                      >
+                        {item.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul> */}
+            </div>
+            <div className="mt-10 md:mt-0">
+              <h3 className="text-sm font-semibold text-primary">Legal</h3>
+              <ul role="list" className="mt-4 space-y-4">
+                {FOOTER_ITEMS.legal.map((item) => (
+                  <li key={item.name}>
+                    <Link
+                      href={item.href}
+                      className="text-sm text-gray-400 hover:text-primary"
+                    >
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
-        <div className="text-left text-sm leading-loose text-muted-foreground">
-          Built by{" "}
-          <a
-            aria-label="Kickflip tutorial on YouTube"
-            href="/"
-            target="_blank"
-            rel="noreferrer"
-            className="font-semibold transition-colors hover:text-foreground"
-          >
-            Manjinder
-          </a>
-          .
-        </div>
-        <div className="text-left text-sm leading-loose text-muted-foreground">
-          Built by{" "}
-          <a
-            aria-label="Kickflip tutorial on YouTube"
-            href="/"
-            target="_blank"
-            rel="noreferrer"
-            className="font-semibold transition-colors hover:text-foreground"
-          >
-            Manjinder
-          </a>
-          .
-        </div>
-        {/* </section> */}
       </div>
     </footer>
   );

@@ -2,6 +2,7 @@ import { getUser } from "@course-selling-monorepo/auth";
 import { ProfileBanner } from "@/components/user-profile/profile-banner";
 import { AppHeader } from "@course-selling-monorepo/ui";
 import { FooterCopy } from "@course-selling-monorepo/ui";
+import { Footer } from "@course-selling-monorepo/ui";
 import { HomePage } from "@/components/home-page/home-page";
 
 async function helper() {
@@ -16,9 +17,9 @@ export default function Home() {
       <AppHeader>
         <ProfileBanner />
       </AppHeader>
-      <HomePage/>
-      <FooterCopy/>
-      {/* <Footer/> */}
+      <HomePage />
+      {/* <FooterCopy/> */}
+      <Footer />
     </div>
   );
 }
