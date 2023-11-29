@@ -1,12 +1,8 @@
-import { Navbar } from "@course-selling-monorepo/ui";
-import { Button } from "@course-selling-monorepo/utils";
 import { getUser } from "@course-selling-monorepo/auth";
 import { ProfileBanner } from "@/components/user-profile/profile-banner";
-import {
-  AppHeader,
-  ModeToggle,
-  NavbarMobile,
-} from "@course-selling-monorepo/ui";
+import { AppHeader } from "@course-selling-monorepo/ui";
+import { FooterCopy } from "@course-selling-monorepo/ui";
+import { HomePage } from "@/components/home-page/home-page";
 
 async function helper() {
   const user = await getUser();
@@ -20,6 +16,9 @@ export default function Home() {
       <AppHeader>
         <ProfileBanner />
       </AppHeader>
+      <HomePage/>
+      <FooterCopy/>
+      {/* <Footer/> */}
     </div>
   );
 }

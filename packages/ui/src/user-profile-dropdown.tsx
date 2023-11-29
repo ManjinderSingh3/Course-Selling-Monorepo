@@ -31,7 +31,7 @@ export const UserProfileDropdown = ({
         <DropdownMenuTrigger asChild>
           <Button
             variant={"secondary"}
-            className="relative h-8 w-8 rounded-full"
+            className="relative h-8 w-8 rounded-full mb-1.5"
           >
             <Avatar className="h-8 w-8">
               <AvatarImage

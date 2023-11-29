@@ -2,6 +2,7 @@
 export * from "./social-icons";
 export * from "./auth-providers-icon/icons";
 export * from "./footer";
+export * from "./footer-copy";
 export * from "./navbar";
 export * from "./navbar-mobile";
 export * from "./auth/sign-in-up";

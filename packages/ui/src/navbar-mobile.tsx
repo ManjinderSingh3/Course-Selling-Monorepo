@@ -5,8 +5,10 @@ import { useState } from "react";
 import Link from "next/link";
 import { COURSE_CATEGORIES_LIST } from "./navbar-course-categories";
 import { NAVBAR_ITEMS } from "./navbar-items";
+import { useSession } from "next-auth/react";
 
 export function NavbarMobile() {
+  const session = useSession();
   const [open, setOpen] = useState<boolean>(false);
   const [openCourseCategories, setOpenCourseCategories] =
     useState<boolean>(false);
@@ -52,11 +54,6 @@ export function NavbarMobile() {
                     <Link
                       key={slug}
                       href="/"
-                      // href={
-                      //   domain === "dub.co"
-                      //     ? `/${slug}`
-                      //     : `https://dub.co/${slug}`
-                      // }
                       onClick={() => setOpen(false)}
                       className="flex w-full space-x-2"
                     >
@@ -72,9 +69,6 @@ export function NavbarMobile() {
             <li key={slug} className="py-3">
               <Link
                 href="/"
-                // href={
-                //   domain === "dub.co" ? `/${slug}` : `https://dub.co/${slug}`
-                // }
                 onClick={() => setOpen(false)}
                 className="flex w-full font-semibold capitalize"
               >
@@ -82,6 +76,34 @@ export function NavbarMobile() {
               </Link>
             </li>
           ))}
+
+          {session.data?.user ? (
+            <li className="py-3">
+              <Link href="/" className="flex w-full font-semibold capitalize">
+                User Profile
+              </Link>
+            </li>
+          ) : (
+            <>
+              <li className="py-3">
+                <Link
+                  href={`/sign-in`}
+                  className="flex w-full font-semibold capitalize"
+                >
+                  Sign in
+                </Link>
+              </li>
+
+              <li className="py-3">
+                <Link
+                  href={`/sign-up`}
+                  className="flex w-full font-semibold capitalize"
+                >
+                  Sign Up
+                </Link>
+              </li>
+            </>
+          )}
         </ul>
       </nav>
     </>
