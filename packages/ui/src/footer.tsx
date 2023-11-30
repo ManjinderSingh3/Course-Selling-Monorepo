@@ -6,10 +6,10 @@ import Link from "next/link";
 export const Footer = () => {
   return (
     <footer className="container z-10 border-t border-gray-200 py-8 backdrop-blur-lg">
-      <div className="xl:grid xl:grid-cols-5 xl:gap-8">
-        <div className="space-y-8 xl:col-span-2">
+      <div className="grid md:grid-cols-3 gap-8">
+        <div className="space-y-8 md:col-span-2">
           <p className="text-sm text-primary">
-            © {new Date().getFullYear()} Manjinder
+            Offering wide range of Industry ready courses !
           </p>
           <div className="flex items-center space-x-2">
             <a
@@ -42,34 +42,30 @@ export const Footer = () => {
               <LinkedIn className="h-5 w-5" />
             </a>
           </div>
+          <p className="text-sm text-primary">
+            © {new Date().getFullYear()} Manjinder
+          </p>
         </div>
 
-        <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-3 xl:mt-0">
-          <div className="md:grid md:grid-cols-2 md:gap-8">
-            <div>
+        <div className="grid l:ml-10">
+          <div className="grid grid-cols-2 sm:col-span-2 md:gap-8 ">
+            <div className="lg:ml-16">
               <h3 className="text-sm font-semibold text-primary">Features</h3>
-              {/* <ul role="list" className="mt-4 space-y-4">
-                  {navigation.features.map((item) => (
-                    <li key={item.name}>
-                      <Link
-                        href={createHref(item.href)}
-                        {...(domain !== "dub.co" && {
-                          onClick: () => {
-                            va.track("Referred from custom domain", {
-                              domain,
-                              medium: `footer item (${item.name})`,
-                            });
-                          },
-                        })}
-                        className="text-sm text-gray-500 hover:text-gray-900"
-                      >
-                        {item.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul> */}
+              <ul role="list" className="mt-4 space-y-4">
+                {FOOTER_ITEMS.legal.map((item) => (
+                  <li key={item.name}>
+                    <Link
+                      href={item.href}
+                      className="text-sm text-gray-400 hover:text-primary"
+                    >
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
-            <div className="mt-10 md:mt-0">
+
+            <div className="md:mt-0 lg:ml-16">
               <h3 className="text-sm font-semibold text-primary">Legal</h3>
               <ul role="list" className="mt-4 space-y-4">
                 {FOOTER_ITEMS.legal.map((item) => (
