@@ -16,30 +16,30 @@ export const FooterCopy = () => {
               href="https://twitter.com/Manjindersinghw"
               target="_blank"
               rel="noreferrer"
-              className="group rounded-md p-2 transition-colors hover:bg-gray-100 "
+              className="h-9 w-9 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground py-2 px-0"
             >
               <span className="sr-only">Twitter</span>
-              <Twitter className="h-5 w-5 text-primary" />
+              <Twitter className="h-5 w-5 " />
             </a>
             <div className="h-8 border-l border-gray-200" />
             <a
               href="https://github.com/ManjinderSingh3"
               target="_blank"
               rel="noreferrer"
-              className="rounded-md p-2 transition-colors hover:bg-gray-100 active:bg-gray-200"
+              className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 py-2 w-9 px-0"
             >
               <span className="sr-only">Github</span>
-              <Github className="h-5 w-5 " />
+              <Github className="h-5 w-5" />
             </a>
             <div className="h-8 border-l border-gray-200" />
             <a
               href="https://www.linkedin.com/in/manjinder-singh-dal/"
               target="_blank"
               rel="noreferrer"
-              className="rounded-md p-2 transition-colors hover:bg-gray-100 active:bg-gray-200"
+              className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 py-2 w-9 px-0"
             >
               <span className="sr-only">LinkedIn</span>
-              <LinkedIn className="h-5 w-5" fill="#52525B" />
+              <LinkedIn className="h-5 w-5" />
             </a>
           </div>
         </div>
