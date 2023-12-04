@@ -18,12 +18,15 @@
     "@types/mongoose": "^5.11.97",
     "axios": "^1.5.1",
     "db": "*",
+    "framer-motion": "^10.16.12",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^7.6.2",
     "next": "14.0.3",
     "next-auth": "^4.24.3",
     "react": "^18",
-    "react-dom": "^18"
+    "react-animated-numbers": "^0.17.1",
+    "react-dom": "^18",
+    "react-type-animation": "^3.2.0"
   },
   "devDependencies": {
     "@types/node": "^20",

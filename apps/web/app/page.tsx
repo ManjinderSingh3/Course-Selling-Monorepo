@@ -18,7 +18,7 @@ export default function Home() {
         <ProfileBanner />
       </AppHeader>
       
-      <HomePage />
+      {/* <HomePage /> */}
       <HeroSection />
       <Footer />
     </div>
