@@ -9,7 +9,7 @@ export const HeroSection = () => {
     <section className="container py-10 lg:py-16">
       <div className="grid grid-cols-1 sm:grid-cols-12">
         <div className="sm:col-span-12 lg:col-span-6 xl:col-span-7 lg:mt-6 xl:mt-14 mr-5 md:mb-10">
-          <h1 className="mb-4 text-4xl lg:text-5xl xl:text-6xl lg:leading-normal font-extrabold lg:text-left ">
+          <h1 className="mb-10 text-4xl lg:text-5xl xl:text-6xl lg:leading-normal font-extrabold lg:text-left ">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-400 to-gray-800 ">
               Explore Expert-led Courses for{" "}
             </span>
@@ -45,14 +45,14 @@ export const HeroSection = () => {
           <div className="hidden md:block">
             <div className="flex mb-8 lg:ml-5 items-center justify-center">
               <Image
-                src="/images/hero-image.png"
+                src="/images/Course1.png"
                 className="rounded-3xl mr-10"
                 alt="Hero Image"
                 height={160}
                 width={180}
               />
               <Image
-                src="/images/hero-image-sample.png"
+                src="/images/Course2.1.png"
                 className="rounded-full md:block"
                 alt="Hero Image"
                 height={200}
@@ -61,14 +61,14 @@ export const HeroSection = () => {
             </div>
             <div className="flex lg:ml-5 items-center justify-center">
               <Image
-                src="/images/hero-image.png"
+                src="/images/Course3.png"
                 className="rounded-full mr-10"
                 alt="Hero Image"
                 height={200}
                 width={200}
               />
               <Image
-                src="/images/hero-image.png"
+                src="/images/Course4.png"
                 className="rounded-3xl"
                 alt="Hero Image"
                 height={160}
@@ -80,7 +80,7 @@ export const HeroSection = () => {
           <div className="md:hidden mt-8 items-center justify-center">
             <div className="mb-8">
               <Image
-                src="/images/hero-image.png"
+                src="/images/Course1.png"
                 className="rounded-3xl mr-10"
                 alt="Hero Image"
                 height={160}
@@ -89,29 +89,29 @@ export const HeroSection = () => {
             </div>
             <div className="mb-8">
               <Image
-                src="/images/hero-image-sample.png"
+                src="/images/Course2.1.png"
                 className="rounded-full"
                 alt="Hero Image"
                 height={200}
                 width={200}
               />
             </div>
-            <div className="mb-8">
+            <div className="ml-4 mb-8">
               <Image
-                src="/images/hero-image.png"
-                className="rounded-full mr-10"
-                alt="Hero Image"
-                height={200}
-                width={200}
-              />
-            </div>
-            <div className="ml-4">
-              <Image
-                src="/images/hero-image.png"
+                src="/images/Course4.png"
                 className="rounded-3xl mr-10"
                 alt="Hero Image"
                 height={160}
                 width={180}
+              />
+            </div>
+            <div className="mb-8">
+              <Image
+                src="/images/Course3.png"
+                className="rounded-full mr-10"
+                alt="Hero Image"
+                height={200}
+                width={200}
               />
             </div>
           </div>
