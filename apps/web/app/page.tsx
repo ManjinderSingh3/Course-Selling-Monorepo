@@ -17,7 +17,6 @@ export default function Home() {
         <ProfileBanner />
       </AppHeader>
       <HomePage />
-
       <Footer />
     </div>
   );
