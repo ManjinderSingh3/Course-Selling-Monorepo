@@ -3,8 +3,6 @@ import { ProfileBanner } from "@/components/user-profile/profile-banner";
 import { AppHeader } from "@course-selling-monorepo/ui";
 import { Footer } from "@course-selling-monorepo/ui";
 import { HomePage } from "@/components/home-page/home-page";
-import { HeroSection } from "@/components/home-page/hero-section";
-import { AchievementsSection } from "@/components/home-page/achievements-section";
 
 async function helper() {
   const user = await getUser();
@@ -18,10 +16,8 @@ export default function Home() {
       <AppHeader>
         <ProfileBanner />
       </AppHeader>
+      <HomePage />
 
-      {/* <HomePage /> */}
-      <HeroSection />
-      <AchievementsSection />
       <Footer />
     </div>
   );

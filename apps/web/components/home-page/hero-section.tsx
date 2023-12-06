@@ -3,11 +3,12 @@ import React from "react";
 import Image from "next/image";
 import { Button } from "@course-selling-monorepo/utils";
 import { TypeAnimation } from "react-type-animation";
+import Link from "next/link";
 
 export const HeroSection = () => {
   return (
     <section className="container py-10 lg:py-16">
-      <div className="grid grid-cols-1 sm:grid-cols-12">
+      <div className="md:container grid grid-cols-1 sm:grid-cols-12">
         <div className="sm:col-span-12 lg:col-span-6 xl:col-span-7 lg:mt-6 xl:mt-14 mr-5 md:mb-10">
           <h1 className="mb-10 text-4xl lg:text-5xl xl:text-6xl lg:leading-normal font-extrabold lg:text-left ">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-400 to-gray-800 ">
@@ -28,7 +29,6 @@ export const HeroSection = () => {
               className="text-cyan-800"
               wrapper="span"
               speed={50}
-              repeat={Infinity}
             />
           </h1>
           <p className="text-primary mb-4 mr-4">
@@ -36,8 +36,12 @@ export const HeroSection = () => {
             opportunity, and unlock your full potential today
           </p>
           <div className="flex">
-            <Button className="mr-2">Sign up</Button>
-            <Button>Sign in</Button>
+            <Button className="mr-2" asChild>
+              <Link href="/sign-up">Sign up</Link>
+            </Button>
+            <Button asChild>
+              <Link href="/sign-in">Sign in</Link>
+            </Button>
           </div>
         </div>
 

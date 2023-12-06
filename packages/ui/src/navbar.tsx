@@ -32,7 +32,7 @@ export function Navbar() {
                     ({ slug, icon: Icon, title, shortTitle }) => (
                       <Link
                         key={slug}
-                        href={`localhost:3000/categories/analytics`}
+                        href={`http://localhost:3000/${slug}`}
                         className="rounded-lg p-3 transition-colors hover:bg-gray-100 active:bg-gray-200"
                       >
                         <div className="flex items-center space-x-2">
