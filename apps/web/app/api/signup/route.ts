@@ -2,7 +2,7 @@ import { signUpSchema } from "@/lib/signUpSchema";
 import { NextResponse } from "next/server";
 import { Admin, isDbConnected } from "db";
 
-// Sign-up Route
+// Sign-up Route : /api/signup
 export async function POST(request: Request) {
   await isDbConnected();
   const body: unknown = await request.json();
