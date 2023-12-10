@@ -2,13 +2,13 @@ import mongoose from "mongoose";
 
 // Step -1 ( Create Schema's)
 const userSchema = new mongoose.Schema({
-  username: String,
+  email: String,
   password: String,
   purchasedCourse: [{ type: mongoose.Schema.Types.ObjectId, ref: "Courses" }],
 });
 
 const adminSchema = new mongoose.Schema({
-  username: String,
+  email: String,
   password: String,
 });
 
