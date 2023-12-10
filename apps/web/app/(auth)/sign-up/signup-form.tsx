@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import React from "react";
 import axios from "axios";
 import { SignUpSchema, signUpSchema } from "@/lib/signUpSchema";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 // This is a React Hook Form
 export function SignupForm() {
@@ -13,33 +14,42 @@ export function SignupForm() {
     formState: { errors, isSubmitting },
     reset,
     setError,
-  } = useForm<SignUpSchema>({});
+  } = useForm<SignUpSchema>({
+    resolver: zodResolver(signUpSchema),
+  });
+  // Zod resolver is used to connect zod validations to react hook form
 
   const onSubmit = async (data: SignUpSchema) => {
     const response = await fetch("api/signup", {
       method: "POST",
-      body: JSON.stringify(data),
+      body: JSON.stringify({
+        email: data.email,
+        password: data.password,
+      }),
       headers: {
         "Content-Type": "application/json",
       },
     });
-    console.log("-->", response);
-    const responseData = response.json();
+    const responseData = await response.json();
 
-    // if (responseData.errors) {
-    //   if (errors.email) {
-    //     setError("email", {
-    //       type: "server",
-    //       //message: errors.email,
-    //       message: "Empty email",
-    //     });
-    //   } else if (errors.password) {
-    //     setError("password", {
-    //       type: "server",
-    //       message: "",
-    //     });
-    //   }
-    // }
+    //SERVER side errors
+    if (responseData.errors) {
+      const error = responseData.errors;
+      if (error.email) {
+        setError("email", {
+          type: "server",
+          message: error.email,
+        });
+      } else if (error.password) {
+        setError("password", {
+          type: "server",
+          message: error.password,
+        });
+      }
+    } else {
+      // TODO : If user signed up successfully redirect them to their dasboard
+      reset();
+    }
   };
 
   return (
@@ -53,17 +63,19 @@ export function SignupForm() {
           placeholder="example@gmail.com"
         />
         {errors.email && (
-          <p className="text-red-500">{`${errors.email.message}`}</p>
+          <Label className="text-red-500">{`${errors.email.message}`}</Label>
         )}
       </div>
       <div className="grid gap-2 mt-4">
         <Label htmlFor="password">Password</Label>
         <Input {...register("password")} id="password" type="password" />
         {errors.password && (
-          <p className="text-red-500">{`${errors.password.message}`}</p>
+          <Label className="text-red-500">{`${errors.password.message}`}</Label>
         )}
       </div>
-      <Button className="w-full mt-4">Create Account</Button>
+      <Button disabled={isSubmitting} className="w-full mt-4">
+        Create Account
+      </Button>
     </form>
   );
 }
