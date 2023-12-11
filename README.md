@@ -4,7 +4,8 @@ A Course Selling Platform. Tech stack used in this web application :
 - Monorepo
 - NextJS
 - Prisma ORM
-- Next-Auth 
+- Next-Auth
+- JWT (Jason Web Tokens) : Cookie-based authentication using JWT for secure user sessions
 - TailwindCSS and Shadcn (Styling Libraries)
 - Docker
 
@@ -28,6 +29,14 @@ This Turborepo includes the following apps and packages:
 - `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
 - `tsconfig`: `tsconfig.json`s used throughout the monorepo
 
+## Features
+### Authentication
+- NextAuth Authentication using Google, Facebook, and Discord.
+- JWT-Based Authentication: Cookie-based JWT authentication for maintaining user sessions.
+
+## Admin Routes
+
+## Client Routes
 
 ## Steps to Build
 ### Build

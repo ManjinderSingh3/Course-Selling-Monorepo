@@ -1,11 +1,14 @@
 import { signUpSchema } from "@/lib/types";
 import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
 import { Admin, isDbConnected } from "db";
 import jwt from "jsonwebtoken";
+import { serialize } from "cookie";
+// TODO: ADMIN_JWT_SECRET in .ENV file
 const ADMIN_JWT_SECRET = "admin";
 
 // Sign-up Route : /api/signup
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
   await isDbConnected();
   const body: unknown = await request.json();
   const parsedInput = signUpSchema.safeParse(body);
@@ -22,13 +25,26 @@ export async function POST(request: Request) {
   const { email, password } = parsedInput.data;
   const admin = await Admin.findOne({ email });
   if (admin) {
-    return NextResponse.json({ success: true, message: "Admin already exist" });
+    return NextResponse.json({ message: "Admin already exist" });
   } else {
     const newAdmin = new Admin({ email, password });
     await newAdmin.save();
     const token = jwt.sign({ id: newAdmin._id }, ADMIN_JWT_SECRET, {
-      expiresIn: "1h",
+      expiresIn: 60 * 60 * 24 * 30,
     });
-    return NextResponse.json({ message: "Admin created successfully" });
+
+    // TODO: Put cookie name inside .ENV file
+    const serialized = serialize("coursehubJWT", token, {
+      httpOnly: true,
+      sameSite: "strict",
+      maxAge: 60 * 60 * 24 * 30,
+      path: "/",
+    });
+
+    const response = { message: "Admin created successfully" };
+
+    return new Response(JSON.stringify(response), {
+      headers: { "Set-Cookie": serialized },
+    });
   }
 }

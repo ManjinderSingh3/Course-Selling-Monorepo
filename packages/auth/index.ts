@@ -21,10 +21,10 @@ export const authOptions: NextAuthOptions = {
   session: {
     strategy: "jwt",
     maxAge: 30 * 24 * 60 * 60, //30 days
-  }
+  },
 };
 
-export async function getUser() {
+export async function getUserDetails() {
   try {
     const session = await getServerSession(authOptions);
     return session?.user;
