@@ -2,8 +2,7 @@
 import { Button, Label, Input } from "@course-selling-monorepo/utils";
 import { useForm } from "react-hook-form";
 import React from "react";
-import axios from "axios";
-import { SignUpSchema, signUpSchema } from "@/lib/signUpSchema";
+import { SignUpSchema, signUpSchema } from "@/lib/types";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 // This is a React Hook Form

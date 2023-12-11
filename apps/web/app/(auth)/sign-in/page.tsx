@@ -1,8 +1,5 @@
-import {
-  Authorization,
-  SigninForm,
-  SigninFormFooter,
-} from "@course-selling-monorepo/ui";
+import { Authorization, SigninFormFooter } from "@course-selling-monorepo/ui";
+import { SigninForm } from "./signin-form";
 import type { Metadata } from "next";
 import { OAuthSignIn } from "../oauth-signin";
 
