@@ -4,8 +4,10 @@ import type { NextRequest } from "next/server";
 import { Admin, isDbConnected } from "db";
 import jwt from "jsonwebtoken";
 import { serialize } from "cookie";
-// TODO: ADMIN_JWT_SECRET in .ENV file
+// TODO: ADMIN_JWT_SECRET, MAX_AGE, COOKIE_NAME in .ENV file
 const ADMIN_JWT_SECRET = "admin";
+const MAX_AGE = 60 * 60 * 1000;
+const COOKIE_NAME = "coursehubJWT";
 
 // Sign-up Route : /api/signup
 export async function POST(request: NextRequest) {
@@ -30,19 +32,17 @@ export async function POST(request: NextRequest) {
     const newAdmin = new Admin({ email, password });
     await newAdmin.save();
     const token = jwt.sign({ id: newAdmin._id }, ADMIN_JWT_SECRET, {
-      expiresIn: 60 * 60 * 24 * 30,
+      expiresIn: MAX_AGE,
     });
 
-    // TODO: Put cookie name inside .ENV file
-    const serialized = serialize("coursehubJWT", token, {
+    const serialized = serialize(COOKIE_NAME, token, {
       httpOnly: true,
       sameSite: "strict",
-      maxAge: 60 * 60 * 24 * 30,
+      maxAge: MAX_AGE,
       path: "/",
     });
 
     const response = { message: "Admin created successfully" };
-
     return new Response(JSON.stringify(response), {
       headers: { "Set-Cookie": serialized },
     });
