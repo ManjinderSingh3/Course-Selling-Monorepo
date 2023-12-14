@@ -11,3 +11,8 @@ export const signInSchema = z.object({
   password: z.string().min(10, "Your Email Id or Password did not match "),
 });
 export type SignInSchema = z.infer<typeof signInSchema>;
+
+export type JwtPayload = {
+  id?: string;
+  email?: string;
+};

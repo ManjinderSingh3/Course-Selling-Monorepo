@@ -28,6 +28,9 @@ export function Signout() {
           disabled={isLoading}
           onClick={async () => {
             setIsLoading(true);
+            // Clearing jwtToken
+            await fetch(`api/signout`, { method: "GET" });
+            // Next-Auth Signout
             await signOut({ redirect: true, callbackUrl: "/" });
           }}
         >

@@ -18,12 +18,7 @@ export function SignupForm() {
   }); // Zod resolver is used to connect zod validations to react hook form
 
   const onSubmit = async (data: SignUpSchema) => {
-    const cookiesUserDetails = await fetch("api/me", {
-      method: "GET",
-    });
-    console.log("Cookie-based-Auth details: ", await cookiesUserDetails.json());
-
-    const response = await fetch("api/signup", {
+    const response = await fetch(`api/signup`, {
       method: "POST",
       body: JSON.stringify({
         email: data.email,
