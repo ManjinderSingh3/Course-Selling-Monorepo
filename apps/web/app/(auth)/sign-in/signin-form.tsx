@@ -28,8 +28,9 @@ export function SigninForm() {
         "Content-Type": "application/json",
       },
     });
-    await fetch("api/me", { method: "GET" });
     const responseData = await response.json();
+
+    //await fetch("api/me", { method: "GET" });
 
     // SERVER side errors
     if (responseData.errors) {

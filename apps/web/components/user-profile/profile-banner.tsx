@@ -7,7 +7,7 @@ export const ProfileBanner = async () => {
   const data = await getServerSession(authOptions);
   const initials = `${data?.user?.name?.charAt(0) ?? ""}`;
 
-  // We can do if-else for Next-Auth session and for ME route 
+  // We can do if-else for Next-Auth session and for ME route
 
   return (
     <div className="hidden lg:block mt-1.5 mr-2">
@@ -18,7 +18,13 @@ export const ProfileBanner = async () => {
             initials={initials}
           ></UserProfileDropdown>
         </>
-      ) : (
+      ) : 
+      // Else-If condition to check if user has logged in. Hit ME route's and see.
+      // true ? (
+      //   true
+      // ) 
+      // : 
+      (
         <SigninAndSignupButtons />
       )}
     </div>

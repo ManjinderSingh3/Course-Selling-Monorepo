@@ -3,6 +3,8 @@ import { ProfileBanner } from "@/components/user-profile/profile-banner";
 import { AppHeader } from "@course-selling-monorepo/ui";
 import { Footer } from "@course-selling-monorepo/ui";
 import { HomePage } from "@/components/home-page/home-page";
+import { RecoilRoot } from "recoil";
+import InitUser from "./init-user/init-user";
 
 async function helper() {
   const user = await getUserDetails();
@@ -12,12 +14,13 @@ async function helper() {
 export default function Home() {
   helper();
   return (
-    <div>
-      <AppHeader>
-        <ProfileBanner />
-      </AppHeader>
-      <HomePage />
-      <Footer />
-    </div>
+      <div>
+        <InitUser />
+        <AppHeader>
+          <ProfileBanner />
+        </AppHeader>
+        <HomePage />
+        <Footer />
+      </div>
   );
 }

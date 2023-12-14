@@ -1,8 +1,8 @@
 "use client";
-
 import { SessionProvider } from "next-auth/react";
 
-export function ClientComponentsSessionProvider({
+// Wrappper to fetch user session. Client components fetch user details using this wrapper
+export function UserSessionWrapper({
   children,
   session,
 }: {

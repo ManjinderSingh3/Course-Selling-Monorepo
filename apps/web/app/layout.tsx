@@ -4,7 +4,8 @@ import { ThemeProvider } from "@course-selling-monorepo/ui";
 import "@/styles/globals.css";
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "@course-selling-monorepo/auth";
-import { ClientComponentsSessionProvider } from "@/app/session-provider/client-comp-session-provider";
+import { UserSessionWrapper } from "./(wrappers)/user-session-wrapper/user-session-wrapper";
+import { RecoilRootWrapper } from "./(wrappers)/recoil-wrapper/recoil-wrapper";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,16 +23,18 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ClientComponentsSessionProvider session={session}>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            {children}
-          </ThemeProvider>
-        </ClientComponentsSessionProvider>
+        <RecoilRootWrapper>
+          <UserSessionWrapper session={session}>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            >
+              {children}
+            </ThemeProvider>
+          </UserSessionWrapper>
+        </RecoilRootWrapper>
       </body>
     </html>
   );
