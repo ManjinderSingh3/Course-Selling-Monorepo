@@ -21,7 +21,7 @@ export function SigninForm() {
   });
 
   const onSubmit = async (data: SignInSchema) => {
-    const response = await fetch("api/signin", {
+    const response = await fetch("api/auth/signin", {
       method: "POST",
       body: JSON.stringify({
         email: data.email,

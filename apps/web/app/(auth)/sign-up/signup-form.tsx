@@ -4,9 +4,11 @@ import { useForm } from "react-hook-form";
 import React from "react";
 import { SignUpSchema, signUpSchema } from "@/lib/types";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useRouter } from "next/navigation";
 
 // This is a React Hook Form
 export function SignupForm() {
+  const router = useRouter();
   const {
     register,
     handleSubmit,
@@ -18,7 +20,7 @@ export function SignupForm() {
   }); // Zod resolver is used to connect zod validations to react hook form
 
   const onSubmit = async (data: SignUpSchema) => {
-    const response = await fetch(`api/signup`, {
+    const response = await fetch(`api/auth/signup`, {
       method: "POST",
       body: JSON.stringify({
         email: data.email,
@@ -45,7 +47,7 @@ export function SignupForm() {
         });
       }
     } else {
-      // TODO : If user signed up successfully redirect them to their dasboard + Profile Header should see the Profile symbol
+      router.push("/");
       reset();
     }
   };
@@ -77,29 +79,3 @@ export function SignupForm() {
     </form>
   );
 }
-/*
-const cookiesUserDetails = await fetch("api/me", {
-  method: "GET",
-  // headers :{
-  //   "Content-Type":"application/json"
-  // }
-});
-console.log("Cookie-based-Auth details: ", await cookiesUserDetails.json);
-
-const cookieDetails = await axios.get(`api/me`);
-console.log("Cookie-based-Auth details: ", await cookieDetails.data);
-
-const response = await axios.post(
-  `api/signup`,
-  {
-    email: data.email,
-    password: data.password,
-  },
-  {
-    headers: {
-      "Content-Type": "application/json",
-    },
-  }
-);
-console.log("--->", response);
-*/

@@ -11,9 +11,14 @@ import {
   CardTitle,
 } from "@course-selling-monorepo/utils";
 import { Icons } from "./auth-providers-icon/icons";
+import { useRecoilValue } from "recoil";
+import { userEmailState } from "store";
+import { useRouter } from "next/navigation";
 
 export function Signout() {
+  const router = useRouter();
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const userEmail = useRecoilValue(userEmailState);
   return (
     <Card>
       <CardHeader className="space-y-1">
@@ -28,10 +33,12 @@ export function Signout() {
           disabled={isLoading}
           onClick={async () => {
             setIsLoading(true);
-            // Clearing jwtToken
-            await fetch(`api/signout`, { method: "GET" });
-            // Next-Auth Signout
-            await signOut({ redirect: true, callbackUrl: "/" });
+            {
+              userEmail
+                ? (await fetch(`api/auth/signout`, { method: "GET" }),
+                  router.push("/")) // Clearing jwtToken
+                : await signOut({ redirect: true, callbackUrl: "/" }); // Next-Auth Signout
+            }
           }}
         >
           {isLoading && <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />}

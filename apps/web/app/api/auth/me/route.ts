@@ -7,7 +7,7 @@ import { JwtPayload } from "@/lib/types";
 const ADMIN_JWT_SECRET = "admin";
 const COOKIE_NAME = "coursehubJWT";
 
-// GET route (/api/me) : to find the current user
+// GET route (/api/auth/me) : to find the current user
 export async function GET(request: NextRequest) {
   /* 
   Case:1

@@ -2,7 +2,7 @@ import { serialize } from "cookie";
 import { NextRequest, NextResponse } from "next/server";
 const COOKIE_NAME = "coursehubJWT";
 
-//GET handler (api/signout): to return empty/clear JWT token
+//GET handler (api/auth/signout): to return empty/clear JWT token
 export async function GET(request: NextRequest) {
   const jwtToken = request.cookies.get(COOKIE_NAME)?.value;
   if (!jwtToken) {

@@ -10,7 +10,7 @@ export default async function InitUser() {
   const setUser = useSetRecoilState(userState);
   const init = async () => {
     try {
-      const response = await axios.get(`api/me`);
+      const response = await axios.get(`api/auth/me`);
       if (response.data.email) {
         setUser({
           isLoading: false,

@@ -9,7 +9,7 @@ const ADMIN_JWT_SECRET = "admin";
 const MAX_AGE = 60 * 60 * 1000;
 const COOKIE_NAME = "coursehubJWT";
 
-// Sign-up Route : /api/signup
+// Sign-up Route : /api/auth/signup
 export async function POST(request: NextRequest) {
   await isDbConnected();
   const body: unknown = await request.json();
