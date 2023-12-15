@@ -9,22 +9,19 @@ const COOKIE_NAME = "coursehubJWT";
 
 // GET route (/api/me) : to find the current user
 export async function GET(request: NextRequest) {
-  // ---------- SET User state using Recoil once this route is hit -------------
   /* 
   Case:1
   If Signup using normal email-password, fetch details from DB
   */
   const token = request.cookies.get(COOKIE_NAME)?.value;
-  console.log("Token: ", token);
   if (!token) {
     return NextResponse.json({ message: "cookie token not found" });
   } else {
     // TODO : Admin MIDDLEWARE should do this verification
     let user = verify(token, ADMIN_JWT_SECRET) as JwtPayload;
-    console.log("Verified User: ", user);
     const admin = await Admin.findOne({ _id: user.id });
     if (!admin) {
-      // TODO : Should show server error message to client
+      // TODO : Show server error message to client
       return NextResponse.json({ message: "Admin doesn't exist" });
     }
     return NextResponse.json({ email: admin.email });

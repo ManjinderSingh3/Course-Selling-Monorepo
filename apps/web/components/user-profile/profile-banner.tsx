@@ -1,30 +1,37 @@
+"use client";
 import { UserProfileDropdown } from "@course-selling-monorepo/ui";
-import { getServerSession } from "next-auth";
-import { authOptions } from "@course-selling-monorepo/auth";
 import { SigninAndSignupButtons } from "@course-selling-monorepo/ui";
+import { useRecoilValue } from "recoil";
+import { userEmailState } from "store";
+import { useSession } from "next-auth/react";
 
-export const ProfileBanner = async () => {
-  const data = await getServerSession(authOptions);
-  const initials = `${data?.user?.name?.charAt(0) ?? ""}`;
+export const ProfileBanner = () => {
+  // Next-Auth session data
+  const session = useSession();
+  const nextAuthInitials = `${session.data?.user?.name?.charAt(0) ?? ""}`;
 
-  // We can do if-else for Next-Auth session and for ME route
+  // User details from ME route
+  const userEmail = useRecoilValue(userEmailState); // Subscribing to Selector
+  const jwtInitials = `${userEmail?.charAt(0) ?? ""}`;
 
   return (
     <div className="hidden lg:block mt-1.5 mr-2">
-      {data?.user ? (
+      {session.data?.user ? (
         <>
           <UserProfileDropdown
-            data={data}
-            initials={initials}
+            data={session.data}
+            initials={nextAuthInitials}
           ></UserProfileDropdown>
         </>
-      ) : 
-      // Else-If condition to check if user has logged in. Hit ME route's and see.
-      // true ? (
-      //   true
-      // ) 
-      // : 
-      (
+      ) : //Else-If condition to check if user has logged in. Hit ME route and see.
+      userEmail ? (
+        <>
+          <UserProfileDropdown
+            email={userEmail}
+            initials={jwtInitials}
+          ></UserProfileDropdown>
+        </>
+      ) : (
         <SigninAndSignupButtons />
       )}
     </div>

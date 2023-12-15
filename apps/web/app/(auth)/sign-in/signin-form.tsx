@@ -4,9 +4,12 @@ import { useForm } from "react-hook-form";
 import React from "react";
 import { SignInSchema, signInSchema } from "@/lib/types";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useRouter } from "next/navigation";
 
 // This is a React Hook Form
 export function SigninForm() {
+  const router = useRouter();
+
   const {
     register,
     handleSubmit,
@@ -30,8 +33,6 @@ export function SigninForm() {
     });
     const responseData = await response.json();
 
-    //await fetch("api/me", { method: "GET" });
-
     // SERVER side errors
     if (responseData.errors) {
       const error = responseData.errors;
@@ -47,7 +48,7 @@ export function SigninForm() {
         });
       }
     } else {
-      // TODO : If user signed up successfully redirect them to their dasboard
+      router.push("/");
       reset();
     }
   };
