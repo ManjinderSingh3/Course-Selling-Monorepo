@@ -1,0 +1,34 @@
+# This is a GIthub Action
+name: Deploy Web Next Application
+
+on:
+  push:
+    paths:
+      - "apps/web/**"
+      - "packages/**"
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest # Ubuntu machine of Github
+
+    steps:
+    - name: Checkout code # It means clone the code
+      uses: actions/checkout@v2 # It's a Github action
+
+    - name: SSH and deploy
+      env:
+        # This is certificate key or PEM file which we save on Github
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }} 
+      run: |
+        echo "$SSH_PRIVATE_KEY" > keyfile
+        chmod 600 keyfile
+        mkdir -p ~/.ssh  
+        cp known_hosts ~/.ssh/known_hosts
+        ssh -t -i keyfile ubuntu@ec2-54-87-46-179.compute-1.amazonaws.com "sudo bash /home/ubuntu/Course-Selling-Monorepo/apps/web/deploy.sh"
+
+# Meaning of commands in run:  
+# (echo "$SSH_PRIVATE_KEY" > keyfile) : Take our secrets from PEM file and put it in newly created keyfile
+# ( mkdir -p ~/.ssh ) : Create a folder called .ssh and inside it we put a file named known_hosts
+# (~/.ssh/known_hosts) : Put known hosts file inside .ssh folder
