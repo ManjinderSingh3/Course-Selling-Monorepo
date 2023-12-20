@@ -42,7 +42,7 @@ export async function POST(request: NextRequest) {
       path: "/",
     });
 
-    const response = { message: "Admin created successfully" };
+    const response = { message: "Admin created successfully !!" };
     return new Response(JSON.stringify(response), {
       headers: { "Set-Cookie": serialized },
     });
