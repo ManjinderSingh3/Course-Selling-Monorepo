@@ -15,7 +15,7 @@ jobs:
 
     steps:
     - name: Checkout code # It means clone the code
-      uses: actions/checkout@v2 # It's a Github action
+      uses: actions/checkout@v2 # It's a Github action to pull the code
 
     - name: SSH and deploy
       env:
@@ -26,7 +26,7 @@ jobs:
         chmod 600 keyfile
         mkdir -p ~/.ssh  
         cp known_hosts ~/.ssh/known_hosts
-        ssh -t -i keyfile ubuntu@ec2-54-87-46-179.compute-1.amazonaws.com "sudo bash /home/ubuntu/Course-Selling-Monorepo/apps/web/deploy.sh"
+        ssh -t -i keyfile ubuntu@ec2-18-209-13-239.compute-1.amazonaws.com "sudo bash /home/ubuntu/Course-Selling-Monorepo/apps/web/deploy.sh"
 
 # Meaning of commands in run:  
 # (echo "$SSH_PRIVATE_KEY" > keyfile) : Take our secrets from PEM file and put it in newly created keyfile
