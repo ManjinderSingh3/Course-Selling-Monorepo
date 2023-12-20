@@ -41,6 +41,8 @@ export async function POST(request: Request) {
       headers: { "Set-Cookie": serialized },
     });
   } else {
-    return NextResponse.json({ message: "User authentication failed" });
+    return NextResponse.json({
+      message: "User authentication failed. Please try again !",
+    });
   }
 }
