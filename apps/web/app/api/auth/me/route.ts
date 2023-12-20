@@ -22,7 +22,9 @@ export async function GET(request: NextRequest) {
     const admin = await Admin.findOne({ _id: user.id });
     if (!admin) {
       // TODO : Show server error message to client
-      return NextResponse.json({ message: "Admin doesn't exist" });
+      return NextResponse.json({
+        message: "Admin doesn't exist. Please try again !",
+      });
     }
     return NextResponse.json({ email: admin.email });
   }
