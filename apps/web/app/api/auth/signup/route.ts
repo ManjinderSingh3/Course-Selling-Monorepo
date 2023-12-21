@@ -27,7 +27,7 @@ export async function POST(request: NextRequest) {
   const { email, password } = parsedInput.data;
   const admin = await Admin.findOne({ email });
   if (admin) {
-    return NextResponse.json({ message: "Admin already exist" });
+    return NextResponse.json({ message: "Admin already exist." });
   } else {
     const newAdmin = new Admin({ email, password });
     await newAdmin.save();
