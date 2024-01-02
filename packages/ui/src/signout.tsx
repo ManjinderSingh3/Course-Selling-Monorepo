@@ -34,9 +34,9 @@ export function Signout() {
           onClick={async () => {
             setIsLoading(true);
             {
-              userEmail
-                ? (await fetch(`api/auth/signout`, { method: "GET" }),
-                  router.push("/")) // Clearing jwtToken
+              userEmail // if userEmail is found then we will clear jwtToken else Next-Auth Signout flow
+                ? (await fetch(`api/auth/signout`, { method: "POST" }), // Clearing jwtToken
+                  router.push("/"))
                 : await signOut({ redirect: true, callbackUrl: "/" }); // Next-Auth Signout
             }
           }}

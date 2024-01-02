@@ -8,4 +8,4 @@ yarn install
 # yarn build
 pm2 stop next
 pm2 start npm --name "next" --run "start:next"
-# The above command is starting a new PM2 process named "next" and running the NPM script "start:next". 
+# The above command is starting a new PM2 process named "next" and running the NPM script "start:next". 3
