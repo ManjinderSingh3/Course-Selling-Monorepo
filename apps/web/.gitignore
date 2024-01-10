@@ -1,4 +1,4 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# Web application's .gitignore file. There is another root level .gitignore file
 
 # dependencies
 /node_modules
@@ -34,3 +34,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# miscellaneous
+/prisma/migrations
