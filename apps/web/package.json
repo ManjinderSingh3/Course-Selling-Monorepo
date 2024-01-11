@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "dotenv -e ../../.env next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -21,6 +21,8 @@
     "axios": "^1.5.1",
     "cookie": "^0.6.0",
     "db": "*",
+    "dotenv": "^16.3.1",
+    "dotenv-cli": "^7.3.0",
     "framer-motion": "^10.16.12",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^7.6.2",

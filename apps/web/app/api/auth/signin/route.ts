@@ -3,10 +3,9 @@ import { signInSchema } from "@/lib/types";
 import { NextResponse } from "next/server";
 import jwt from "jsonwebtoken";
 import { serialize } from "cookie";
-// TODO: ADMIN_JWT_SECRET, MAX_AGE, COOKIE_NAME in .ENV file
-const ADMIN_JWT_SECRET = "admin";
+import "dotenv/config";
+// TODO: MAX_AGE in .ENV file
 const MAX_AGE = 60 * 60 * 1000;
-const COOKIE_NAME = "coursehubJWT";
 
 // Sign-in Route : /api/auth/signin
 export async function POST(request: Request) {
@@ -25,11 +24,15 @@ export async function POST(request: Request) {
   const { email, password } = parsedInput.data;
   const admin = await Admin.findOne({ email, password });
   if (admin) {
-    const token = jwt.sign({ id: admin._id }, ADMIN_JWT_SECRET, {
-      expiresIn: MAX_AGE,
-    });
+    const token = jwt.sign(
+      { id: admin._id },
+      process.env.ADMIN_JWT_SECRET as string,
+      {
+        expiresIn: MAX_AGE,
+      }
+    );
 
-    const serialized = serialize(COOKIE_NAME, token, {
+    const serialized = serialize(process.env.COOKIE_NAME as string, token, {
       httpOnly: true,
       sameSite: "strict",
       maxAge: MAX_AGE,
