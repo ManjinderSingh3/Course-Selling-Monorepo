@@ -1,4 +1,4 @@
-import { Admin, isDbConnected } from "db";
+import { Admin, isDbConnected } from "db/mongoDB";
 import { signInSchema } from "@/lib/types";
 import { NextResponse } from "next/server";
 import jwt from "jsonwebtoken";

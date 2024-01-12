@@ -1,7 +1,7 @@
 import { signUpSchema } from "@/lib/types";
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import { Admin, isDbConnected } from "db";
+import { Admin, isDbConnected } from "db/mongoDB";
 import jwt from "jsonwebtoken";
 import { serialize } from "cookie";
 // TODO: MAX_AGE in .ENV file
