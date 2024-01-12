@@ -92,7 +92,7 @@ export const UserProfileDropdown = ({
               className="relative h-8 w-8 rounded-full mb-1.5"
             >
               <Avatar className="h-8 w-8">
-                <AvatarFallback>{initials}</AvatarFallback>
+                <AvatarFallback className="bg-blue-300">{initials}</AvatarFallback>
               </Avatar>
             </Button>
           </DropdownMenuTrigger>

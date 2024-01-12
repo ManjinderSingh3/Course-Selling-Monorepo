@@ -12,7 +12,7 @@ export const ProfileBanner = () => {
 
   // User details from ME route
   const userEmail = useRecoilValue(userEmailState); // Subscribing to Selector
-  const jwtInitials = `${userEmail?.charAt(0) ?? ""}`;
+  const jwtInitials = `${userEmail?.charAt(0).toUpperCase() ?? ""}`;
 
   return (
     <div className="hidden lg:block mt-1.5 mr-2">
@@ -23,7 +23,7 @@ export const ProfileBanner = () => {
             initials={nextAuthInitials}
           ></UserProfileDropdown>
         </>
-      ) : //Else-If condition to check if user has logged in. Hit ME route and see.
+      ) : //Else-If condition to check if user has logged in using normal email-password aprroach. We will hit ME route and collect their details.
       userEmail ? (
         <>
           <UserProfileDropdown

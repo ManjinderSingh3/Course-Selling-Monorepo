@@ -3,7 +3,6 @@ import "dotenv/config";
 
 let isDbConnectionDone = false;
 export async function isDbConnected() {
-  console.log("---->",process.env.MONGODB_URL);
   if (isDbConnectionDone) {
     return;
   }
