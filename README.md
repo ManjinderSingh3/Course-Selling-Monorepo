@@ -64,6 +64,7 @@ psql -h localhost -p 5432 -U username -d databaseName
 ```
 
 > PSQL is a terminal-based front-end to PostgreSQL.
+
 > Note: We cannot using ElephantSql in the scope of this project because whenever PRISMA creates migration it needs access to create a temporary table in our DB which is not possible in the case of ElephantSQL database.
 
 - Detailed PostgreSQL and PRISMA setup explanantion can be found [here](https://www.notion.so/PostgreSQL-and-PRISMA-da27e19c28974fb182bf935022ccb83a)
@@ -80,7 +81,6 @@ pnpm build
 ```
 
 ### Develop
-
 To develop all apps and packages, run the following command:
 
 ```
@@ -88,12 +88,5 @@ cd course-selling-monorepo
 pnpm dev
 ```
 
-### Current Issues/ Pending work
 
-- ENV varibales are not accessible
-- Create .env.example file
-- Until the project is not deployed. Set localhost 3000 as a base URL in config.ts file instead of using the same base url in code everywhere. (Something like this:
-  export const BASE_URL = "http://localhost:3000")
-- Deplyment on Vercel. The current deployment workflow has to be fixed. It is failing at the moment.
-- Migrate entire data from MongoDB to Postgres.
-- Next-auth's session token is not expiring.
+
