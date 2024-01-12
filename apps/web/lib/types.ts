@@ -13,6 +13,6 @@ export const signInSchema = z.object({
 export type SignInSchema = z.infer<typeof signInSchema>;
 
 export type JwtPayload = {
-  id?: string;
+  id?: number;
   email?: string;
 };

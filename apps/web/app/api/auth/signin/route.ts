@@ -1,15 +1,15 @@
 import { Admin, isDbConnected } from "db/mongoDB";
 import { signInSchema } from "@/lib/types";
 import { NextResponse } from "next/server";
+import prisma from "@/prisma/prisma";
 import jwt from "jsonwebtoken";
 import { serialize } from "cookie";
 import "dotenv/config";
-// TODO: MAX_AGE in .ENV file
 const MAX_AGE = 60 * 60 * 1000;
 
 // Sign-in Route : /api/auth/signin
 export async function POST(request: Request) {
-  await isDbConnected();
+  //await isDbConnected();
   const body: unknown = await request.json();
   const parsedInput = signInSchema.safeParse(body);
 
@@ -22,10 +22,16 @@ export async function POST(request: Request) {
   }
 
   const { email, password } = parsedInput.data;
-  const admin = await Admin.findOne({ email, password });
+  const admin = await prisma.admin.findUnique({
+    where: {
+      email: email,
+      password: password,
+    },
+  });
+  //const admin = await Admin.findOne({ email, password });
   if (admin) {
     const token = jwt.sign(
-      { id: admin._id },
+      { id: admin.id },
       process.env.ADMIN_JWT_SECRET as string,
       {
         expiresIn: MAX_AGE,
