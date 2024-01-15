@@ -1,5 +1,5 @@
 "use client";
-import { OAuthProviders } from "@course-selling-monorepo/auth";
+import { OAuthProviders } from "@/lib/auth/authOptions";
 import { Icons } from "@course-selling-monorepo/ui";
 import { Button } from "@course-selling-monorepo/utils";
 import { useState } from "react";
@@ -23,7 +23,6 @@ export const OAuthSignIn = () => {
   async function handleClick(provider: OAuthProviders) {
     try {
       const data = await signIn(provider, { callbackUrl: "/", redirect: true });
-      //await new Promise((resolve) => setTimeout(resolve, 10000));
     } catch (error) {
       console.log(error);
     }

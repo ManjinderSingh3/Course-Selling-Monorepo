@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import { ThemeProvider } from "@course-selling-monorepo/ui";
 import "@/styles/globals.css";
 import { getServerSession } from "next-auth/next";
-import { authOptions } from "@course-selling-monorepo/auth";
+import { authOptions } from "@/lib/auth/authOptions";
 import { UserSessionWrapper } from "./(wrappers)/user-session-wrapper/user-session-wrapper";
 import { RecoilRootWrapper } from "./(wrappers)/recoil-wrapper/recoil-wrapper";
 

@@ -1,4 +1,4 @@
-import { getUserDetails } from "@course-selling-monorepo/auth";
+import { getUserDetails } from "@/lib/auth/authOptions";
 import { ProfileBanner } from "@/components/user-profile/profile-banner";
 import { AppHeader } from "@course-selling-monorepo/ui";
 import { Footer } from "@course-selling-monorepo/ui";
