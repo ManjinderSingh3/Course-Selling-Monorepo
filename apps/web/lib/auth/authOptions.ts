@@ -18,36 +18,28 @@ export const authOptions: NextAuthOptions = {
     }),
   ],
   adapter: PrismaAdapter(prisma),
-  secret: process.env.NEXTAUTH_SECRET as string,
+  secret: process.env.NEXTAUTH_SECRET,
   session: {
     strategy: "jwt",
   },
+  cookies: {
+    sessionToken: {
+      name: ``,
+      options: {
+        httpOnly: true,
+        sameSite: "lax",
+        path: "/",
+      },
+    },
+  },
   callbacks: {
-    async session({ token, session }) {
-      if (token) {
-        // is admin is configured in the prisma db it is not available inside the token yet,
-        // and the token specifically comes from the jwt so we have to somehow link the jwt to the database.
-        // for that next auth suggest an explicit jwt callback (docs)
-        // if the token consist of the admin add it to the user field of the current session(note the is admin field of the token is still empty)
-
-        session.user.
-        // session.user.email = token.email;
-      }
+    async session({ session, token, user }) {
+      console.log("$$$$ session : ----", session);
+      console.log("$$$$ token : ----", token);
+      console.log("$$$$ user : ----", user);
       return session;
     },
   },
-  //   cookies: {
-  //     sessionToken: {
-  //       name: `${cookiePrefix}next-auth.session-token`,
-  //       options: {
-  //         httpOnly: true,
-  //         sameSite: "lax",
-  //         path: "/",
-  //         domain: "localhost",
-  //         secure: useSecureCookies,
-  //       },
-  //     },
-  //   },
 };
 
 export async function getUserDetails() {
